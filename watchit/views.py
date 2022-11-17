@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 """List View does a query set and provides all views of a specific post while
 the detail view shows the specific details of a post"""
+from .models import Post
+"""We need to import Post from the models in able to use it"""
 
 # Create your views here.
 

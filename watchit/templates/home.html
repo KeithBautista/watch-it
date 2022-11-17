@@ -1,1 +1,9 @@
-<h1>Hello this is a test World</h1>
+<h1>Current Posts</h1>
+
+<ul>
+{% for Post in object_list %}
+    <li>{{ post.title}} - {{ post.author}}<br/>
+    {{ post. body}}</li>
+{% endfor %}
+</ul>
+ <!--This will run through all posts and show them. This is a for loop so always have an endfor at the end -->
