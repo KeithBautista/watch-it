@@ -2,8 +2,8 @@
 
 <ul>
 {% for Post in object_list %}
-    <li>{{ post.title}} - {{ post.author}}<br/>
-    {{ post. body}}</li>
+    <li><a href="{% url 'post-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }}<br/>
+    {{ Post.body }}</li>
 {% endfor %}
 </ul>
  <!--This will run through all posts and show them. This is a for loop so always have an endfor at the end -->

@@ -16,3 +16,8 @@ class HomeView(ListView):
     template_name = 'home.html'
     """This view will show all the posts since we passed in
     listview"""
+
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'post_details.html'
