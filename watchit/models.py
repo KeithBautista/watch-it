@@ -6,7 +6,7 @@ from django.urls import reverse  # reverse is a module of django
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    title_tag = models.CharField(max_length=255, default="Watch It")
+    title_tag = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     """This will delete all of users' posts"""
     body = models.TextField()
@@ -17,4 +17,5 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('movie-detail', args=(str(self.id)))
-        """self.id is similar to pk, we're asking it to go to itself"""
+        """self.id is similar to pk, we're asking it to go to itself,
+        once the form has been submitted"""
