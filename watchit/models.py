@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
+    title_tag = models.CharField(max_length=255, default="Watch It")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     """This will delete all of users' posts"""
     body = models.TextField()
