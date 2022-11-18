@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse  # reverse is a module of django
 # Create your models here.
 
 
@@ -13,3 +14,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title + ' | ' + str(self.author)
         """This will allow us to see title and author on admin page"""
+
+    def get_absolute_url(self):
+        return reverse('movie-detail', args=(str(self.id)))
+        """self.id is similar to pk, we're asking it to go to itself"""
