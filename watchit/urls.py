@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.urls import path
 from .views import HomeView
-from .views import PostDetailView
+from .views import MovieDetailView
+from .views import AddMovieView
 
 urlpatterns = [
     # path('', views.home, name="home"),
     # Since we are using class based views we need to change this to the below
     path('', HomeView.as_view(), name="home"),
-    path('post/<int:pk>', PostDetailView.as_view(), name="post-detail"),
+    path('post/<int:pk>', MovieDetailView.as_view(), name="movie-detail"),
+    path('add_post/', AddMovieView.as_view(), name="add-post"),
 ]

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 """List View does a query set and provides all views of a specific post while
 the detail view shows the specific details of a post"""
 from .models import Post
@@ -18,6 +18,12 @@ class HomeView(ListView):
     listview"""
 
 
-class PostDetailView(DetailView):
+class MovieDetailView(DetailView):
     model = Post
-    template_name = 'post_details.html'
+    template_name = 'movie_details.html'
+
+
+class AddMovieView(CreateView):
+    model = Post
+    template_name = 'movie_add.html'
+    fields = '__all__'
