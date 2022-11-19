@@ -24,4 +24,5 @@ urlpatterns = [
     path('', HomeView.as_view(), name="home"),
     path('post/<int:pk>', MovieDetailView.as_view(), name="movie-detail"),
     path('add_post/', AddMovieView.as_view(), name="add-post"),
+
 ]
