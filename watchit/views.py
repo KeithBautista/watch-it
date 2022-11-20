@@ -34,3 +34,10 @@ class AddMovieView(CreateView):
     """If you dont want to include all fields,
     you can just create a python list like
     fields = ('title', 'body') """
+
+
+class UpdateMovieView(UpdateView):
+    model = Post
+    template_name = 'movie_update.html'
+    fields = ['title',  'title_tag', 'body']
+    
