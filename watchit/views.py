@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 """List View does a query set and provides all views of a specific post while
 the detail view shows the specific details of a post"""
 from .models import Post
