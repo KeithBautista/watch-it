@@ -4,7 +4,7 @@ from django.views.generic import DeleteView
 """List View does a query set and provides all views of a specific post while
 the detail view shows the specific details of a post"""
 from .models import Post
-from .forms import PostForm
+from .forms import PostForm, UpdatePost
 from django.urls import reverse_lazy
 """We need to import Post from the models in able to use it"""
 """We also need to import PostForm from forms.py to use it"""
@@ -42,8 +42,8 @@ class AddMovieView(CreateView):
 
 class UpdateMovieView(UpdateView):
     model = Post
+    form_class = UpdatePost
     template_name = 'movie_update.html'
-    fields = ['title',  'title_tag', 'body']
 
 
 class DeleteMovieView(DeleteView):
