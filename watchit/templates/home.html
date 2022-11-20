@@ -2,14 +2,30 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
 <h1>Current Posts</h1>
-
 <ul>
+    {% for Post in object_list %}
+        <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
+        {{ Post.body }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<h1>Current Posts</h1>
+<ul>
+    {% for Post in object_list %}
+        <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }}<br/>
+        {{ Post.body }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<!--<ul>
 {% for Post in object_list %}
     <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
     {{ Post.body }}</li>
 {% endfor %}
 </ul>
- <!--This will run through all posts and show them. This is a for loop so always have an endfor at the end -->
+ This will run through all posts and show them. This is a for loop so always have an endfor at the end -->
 
  {% endblock %}

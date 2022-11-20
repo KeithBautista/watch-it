@@ -2,6 +2,8 @@
 {% block title %}{{ post.title_tag }} | {{ post.author}}{% endblock %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
 <h1> {{ post.title }} </h1>
 <small> By: {{ post.author}} </small><br/>
 <small> Created On: {{ post.post_date}} </small><br/>
@@ -14,7 +16,17 @@
 <button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
 <button type="button" class="btn btn-outline-dark"><a href="{% url 'delete-movie' post.pk %}">Delete Movie</a></button><br/>
 <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+{% else %}
+<h1> {{ post.title }} </h1>
+<small> By: {{ post.author}} </small><br/>
+<small> Created On: {{ post.post_date}} </small><br/>
+<hr>
+<br/>
+{{ post.body }}
 
-
+<br/>
+<br/>
+<button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+{% endif %}
 
 {% endblock %}
