@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Delete Movie Recommendation{% endblock %}
+
+
+{% block content %}
+
+<h1>Delete Movie Recommendation</h1>
+<br/><br/>
+<h3>Delete: {{ Post.title }}</h3>
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
+        <strong>Are you sure you want to delete {{ Post.title }}?</strong>
+        <button>Delete Movie</button>
+</div>
+
+ {% endblock %}

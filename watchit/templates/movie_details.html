@@ -11,7 +11,9 @@
 <br/>
 <br/>
 <button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
+<button type="button" class="btn btn-outline-dark"><a href="{% url 'delete-movie' post.pk %}">Delete Movie</a></button><br/>
 <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+
 
 
 {% endblock %}
