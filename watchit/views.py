@@ -22,6 +22,7 @@ class HomeView(ListView):
     """This view will show all the posts since we passed in
     listview"""
     ordering = ['-id']
+    # place in -post_date to show most recent post
 
 
 class MovieDetailView(DetailView):

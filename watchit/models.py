@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse  # reverse is a module of django
+from datetime import datetime, date
 # Create your models here.
 
 
@@ -10,6 +11,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     """This will delete all of users' posts"""
     body = models.TextField()
+    post_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.title + ' | ' + str(self.author)
@@ -20,4 +22,5 @@ class Post(models.Model):
         """self.id is similar to pk, we're asking it to go to itself,
         once the form has been submitted"""
         # This is if you want to return home /return reverse('home')
+
 
