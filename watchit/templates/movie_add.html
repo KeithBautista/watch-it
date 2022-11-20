@@ -2,6 +2,7 @@
 {% block title %}Add Movie Recommendation{% endblock %}
 {% block content %}
 
+{% if user.is_authenticated %}
 <h1>Add Movie Recommendation</h1>
 <br/><br/>
 <div class="form-group">
@@ -11,5 +12,10 @@
         {{ form.as_p }}
         <button>Post</button>
 </div>
+{% else %}
+<h1>You are not logged in</h1>
+    <button class="nav-link" href="{% url 'registration' %}">Register</button>
+    <button class="nav-link" href="{% url 'login' %}">Login</button>
+{% endif %}
 
- {% endblock %}
+{% endblock %}
