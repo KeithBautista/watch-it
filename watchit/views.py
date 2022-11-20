@@ -40,4 +40,4 @@ class UpdateMovieView(UpdateView):
     model = Post
     template_name = 'movie_update.html'
     fields = ['title',  'title_tag', 'body']
-    
+

@@ -8,6 +8,10 @@
 <br/>
 {{ post.body }}
 
-<a href="{% url 'home' %}">Back</a>
+<br/>
+<br/>
+<button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
+<button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+
 
 {% endblock %}

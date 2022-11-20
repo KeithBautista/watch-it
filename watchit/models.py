@@ -19,3 +19,5 @@ class Post(models.Model):
         return reverse('movie-detail', args=(str(self.id)))
         """self.id is similar to pk, we're asking it to go to itself,
         once the form has been submitted"""
+        # This is if you want to return home /return reverse('home')
+
