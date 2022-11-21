@@ -25,6 +25,11 @@ class HomeView(ListView):
     # place in -post_date to show most recent post
 
 
+def CategoryView(request, category):
+    category_posts = Post.objects.filter(category=category)
+    return render(request, 'categories.html', {'category': category, 'category_posts': category_posts})
+
+
 class MovieDetailView(DetailView):
     model = Post
     template_name = 'movie_details.html'
