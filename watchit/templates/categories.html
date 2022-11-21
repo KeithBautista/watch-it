@@ -1,14 +1,35 @@
 {% extends 'base.html' %}
 
-<h1>{{ category }}</h1>
 
 {% block content %}
-    <h1>{{ category }}</h1>
-    <ul>
-    {% for Post in category_posts %}
-        <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
-        {{ Post.body|slice:":200" }}</li>
-    {% endfor %}
-    </ul>
+    {% if user.is_authenticated %}
+        {% if category_posts %}
+            <h1>{{ category }}</h1>
+            <ul>
+            {% for Post in category_posts %}
+                <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
+                {{ Post.body|slice:":200" }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
 
- {% endblock %}
+            <h1>This is not a valid category</h1>
+
+        {% endif %}
+    {% else %}
+            {% if category_posts %}
+            <h1>{{ category }}</h1>
+            <ul>
+            {% for Post in category_posts %}
+                <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} <br/>
+                {{ Post.body|slice:":200" }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+
+            <h1>This is not a valid category</h1>
+
+        {% endif %}
+    {% endif %}
+
+{% endblock %}
