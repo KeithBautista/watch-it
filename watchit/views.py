@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.views.generic import DeleteView
 """List View does a query set and provides all views of a specific post while
 the detail view shows the specific details of a post"""
-from .models import Post
+from .models import Post, Category
 from .forms import PostForm, UpdatePost
 from django.urls import reverse_lazy
 """We need to import Post from the models in able to use it"""
@@ -21,8 +21,15 @@ class HomeView(ListView):
     template_name = 'home.html'
     """This view will show all the posts since we passed in
     listview"""
+    category = Category.objects.all()
     ordering = ['-id']
     # place in -post_date to show most recent post
+
+    def get_context_data(self, *args, **kwargs):
+        category_menu = Category.objects.all()
+        context = super(HomeView, self).get_context_data(*args, **kwargs)
+        context["category_menu"] = category_menu
+        return context
 
 
 def CategoryView(request, category):
