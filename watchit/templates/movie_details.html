@@ -27,7 +27,7 @@ Post Author: {{ post.author.id}}
         <form action="{% url 'like_post' post.pk %}"
         method ="POST">
             {% csrf_token %}
-            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> - {{ total_likes }}
         </form>
 
 
@@ -48,7 +48,7 @@ Post Author: {{ post.author.id}}
         <form action="{% url 'like_post' post.pk %}"
         method ="POST">
             {% csrf_token %}
-            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> - {{ total_likes }}
         </form>
     {% endif %}
 {% else %}
@@ -62,14 +62,6 @@ Post Author: {{ post.author.id}}
         <br/>
         <br/>
         <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
-        <br/><br/>
-        <hr>
-        <br/>
-        <form action="{% url 'like_post' post.pk %}"
-        method ="POST">
-            {% csrf_token %}
-            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
-        </form>
 {% endif %}
 
 

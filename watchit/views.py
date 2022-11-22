@@ -51,7 +51,10 @@ class MovieDetailView(DetailView):
     def get_context_data(self, *args, **kwargs):
         category_menu = Category.objects.all()
         context = super(MovieDetailView, self).get_context_data(*args, **kwargs)
+        getid = get_object_or_404(Post, id=self.kwargs['pk'])
+        total_likes = getid.total_likes()
         context["category_menu"] = category_menu
+        context["total_likes"] = total_likes
         return context
 
 
