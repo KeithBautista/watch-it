@@ -72,7 +72,8 @@ Post Author: {{ post.author.id}}
 
         <br/>
         <br/>
-        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button><br/> 
+        <small>{{ total_likes }} liked this movie</small>
 {% endif %}
 
 
