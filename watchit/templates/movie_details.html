@@ -3,30 +3,47 @@
 
 {% block content %}
 
+current user: {{user.id}}
+Post Author: {{ post.author.id}}
+
 {% if user.is_authenticated %}
-<h1> {{ post.title }} </h1>
-<small> By: {{ post.author}} </small><br/>
-<small> Created On: {{ post.post_date}} </small><br/>
-<hr>
-<br/>
-{{ post.body|linebreaks }}
+    {% if user.id == post.author.id %}
+        <h1> {{ post.title }} - {{ post.author.id}} </h1>
+        <small> By: {{ post.author}} </small><br/>
+        <small> Created On: {{ post.post_date}} </small><br/>
+        <hr>
+        <br/>
+        {{ post.body|linebreaks }}
 
-<br/>
-<br/>
-<button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
-<button type="button" class="btn btn-outline-dark"><a href="{% url 'delete-movie' post.pk %}">Delete Movie</a></button><br/>
-<button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+        <br/>
+        <br/>
+        <button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
+        <button type="button" class="btn btn-outline-dark"><a href="{% url 'delete-movie' post.pk %}">Delete Movie</a></button><br/>
+        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+    {% else %}
+        <h1> {{ post.title }} - {{ post.author.id}} </h1>
+        <small> By: {{ post.author}} </small><br/>
+        <small> Created On: {{ post.post_date}} </small><br/>
+        <hr>
+        <br/>
+        {{ post.body|linebreaks }}
+
+        <br/>
+        <br/>
+        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+    {% endif %}
 {% else %}
-<h1> {{ post.title }} </h1>
-<small> By: {{ post.author}} </small><br/>
-<small> Created On: {{ post.post_date}} </small><br/>
-<hr>
-<br/>
-{{ post.body|linebreaks }}
+        <h1> {{ post.title }} </h1>
+        <small> By: {{ post.author}} </small><br/>
+        <small> Created On: {{ post.post_date}} </small><br/>
+        <hr>
+        <br/>
+        {{ post.body|linebreaks }}
 
-<br/>
-<br/>
-<button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+        <br/>
+        <br/>
+        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
 {% endif %}
+
 
 {% endblock %}
