@@ -1,20 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.views.generic import DeleteView
 """List View does a query set and provides all views of a specific post while
 the detail view shows the specific details of a post"""
 from .models import Post, Category
 from .forms import PostForm, UpdatePost
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 """We need to import Post from the models in able to use it"""
 """We also need to import PostForm from forms.py to use it"""
 
 
 # Create your views here.
 
+def LikeView(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('movie-detail', args=[str(pk)]))
 
-# def home(request):
-#   return render(request, 'home.html', {})
 
 class HomeView(ListView):
     model = Post

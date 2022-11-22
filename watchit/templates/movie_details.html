@@ -20,6 +20,17 @@ Post Author: {{ post.author.id}}
         <button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
         <button type="button" class="btn btn-outline-dark"><a href="{% url 'delete-movie' post.pk %}">Delete Movie</a></button><br/>
         <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+
+        <br/><br/>
+        <hr>
+        <br/>
+        <form action="{% url 'like_post' post.pk %}"
+        method ="POST">
+            {% csrf_token %}
+            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+        </form>
+
+
     {% else %}
         <h1> {{ post.title }} - {{ post.author.id}} </h1>
         <small> By: {{ post.author}} </small><br/>
@@ -31,6 +42,14 @@ Post Author: {{ post.author.id}}
         <br/>
         <br/>
         <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+        <br/><br/>
+        <hr>
+        <br/>
+        <form action="{% url 'like_post' post.pk %}"
+        method ="POST">
+            {% csrf_token %}
+            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+        </form>
     {% endif %}
 {% else %}
         <h1> {{ post.title }} </h1>
@@ -43,6 +62,14 @@ Post Author: {{ post.author.id}}
         <br/>
         <br/>
         <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+        <br/><br/>
+        <hr>
+        <br/>
+        <form action="{% url 'like_post' post.pk %}"
+        method ="POST">
+            {% csrf_token %}
+            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+        </form>
 {% endif %}
 
 

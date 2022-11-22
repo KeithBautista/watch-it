@@ -20,6 +20,7 @@ from .views import AddMovieView
 from .views import UpdateMovieView
 from .views import DeleteMovieView
 from .views import CategoryView
+from .views import LikeView
 
 urlpatterns = [
     # path('', views.home, name="home"),
@@ -30,5 +31,5 @@ urlpatterns = [
     path('movie/edit/<int:pk>', UpdateMovieView.as_view(), name="edit-movie"),
     path('movie/delete/<int:pk>', DeleteMovieView.as_view(), name="delete-movie"),
     path('category/<str:category>/', CategoryView, name="category"),
-
+    path('like/<int:pk>', LikeView, name="like_post"),
 ]
