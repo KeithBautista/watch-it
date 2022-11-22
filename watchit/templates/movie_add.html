@@ -12,6 +12,13 @@
         {{ form.as_p }}
         <button>Post</button>
 </div>
+
+<!--JS to use the user id as the placeholder value for Post form-->
+<script>
+    var name = "{{ user.id }}";
+    document.getElementById("postFormAuthor").value = name;
+</script>
+
 {% else %}
 <h1>You are not logged in</h1>
     <button class="nav-link" href="{% url 'registration' %}">Register</button>

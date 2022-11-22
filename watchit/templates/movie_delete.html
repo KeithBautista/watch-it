@@ -5,20 +5,24 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<h1>Delete Movie Recommendation</h1>
-<br/><br/>
-<h3>Delete: {{ Post.title }}</h3>
-<div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
-        <strong>Are you sure you want to delete {{ Post.title }}?</strong>
-        <button>Delete Movie</button>
-</div>
+    {% if user.id == post.author.id %}
+    <h1>Delete Movie Recommendation</h1>
+    <br/><br/>
+    <h3>Delete: {{ Post.title }}</h3>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
+            <strong>Are you sure you want to delete {{ Post.title }}?</strong>
+            <button>Delete Movie</button>
+    </div>
+    {% else %}
+    <h1>You cannot delete this page</h1>
+    {% endif %}
 {% else %}
-<h1>You are not logged in</h1>
-    <button class="nav-link" href="{% url 'registration' %}">Register</button>
-    <button class="nav-link" href="{% url 'login' %}">Login</button>
+    <h1>You are not logged in</h1>
+        <button class="nav-link" href="{% url 'registration' %}">Register</button>
+        <button class="nav-link" href="{% url 'login' %}">Login</button>
 {% endif %}
 
  {% endblock %}
