@@ -5,19 +5,24 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<h1>Edit Movie Recommendation</h1>
+    {% if user.id == post.author.id %}
 
-<div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
-        {{ form.as_p }}
-        <button>Update</button>
-</div>
+    <h1>Edit Movie Recommendation</h1>
+
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
+            {{ form.as_p }}
+            <button>Update</button>
+    </div>
+    {% else %}
+    <h1>You cannot edit this page</h1>
+    {% endif %}
 {% else %}
-<h1>You are not logged in</h1>
-    <button class="nav-link" href="{% url 'registration' %}">Register</button>
-    <button class="nav-link" href="{% url 'login' %}">Login</button>
+    <h1>You are not logged in</h1>
+        <button class="nav-link" href="{% url 'registration' %}">Register</button>
+        <button class="nav-link" href="{% url 'login' %}">Login</button>
 {% endif %}
 
  {% endblock %}
