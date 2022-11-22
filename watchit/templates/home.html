@@ -5,21 +5,28 @@
 
 
 {% if user.is_authenticated %}
-
-    <ul>
-    {% for Post in object_list %}
-        <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a> - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
-        {{ Post.body|slice:":200" }}</li>
-    {% endfor %}
-    </ul>
+    {% if user.id == post.author.id %}
+        <ul>
+        {% for Post in object_list %}
+            <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a> - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
+            {{ Post.body|slice:":200" }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <ul>
+        {% for Post in object_list %}
+            <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a><br/>
+            {{ Post.body|slice:":200" }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
 {% else %}
-
-    <ul>
-    {% for Post in object_list %}
-        <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a><br/>
-        {{ Post.body|slice:":200" }}</li>
-    {% endfor %}
-    </ul>
+        <ul>
+        {% for Post in object_list %}
+            <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a><br/>
+            {{ Post.body|slice:":200" }}</li>
+        {% endfor %}
+        </ul>
 {% endif %}
 
 </small> <br/>
