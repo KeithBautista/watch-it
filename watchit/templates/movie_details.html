@@ -13,7 +13,7 @@ Post Author: {{ post.author.id}}
         <small> Created On: {{ post.post_date}} </small><br/>
         <hr>
         <br/>
-        {{ post.body|linebreaks }}
+        {{ post.body|safe }}
 
         <br/>
         <br/>
@@ -43,7 +43,7 @@ Post Author: {{ post.author.id}}
         <small> Created On: {{ post.post_date}} </small><br/>
         <hr>
         <br/>
-        {{ post.body|linebreaks }}
+        {{ post.body|safe }}
 
         <br/>
         <br/>
@@ -68,7 +68,7 @@ Post Author: {{ post.author.id}}
         <small> Created On: {{ post.post_date}} </small><br/>
         <hr>
         <br/>
-        {{ post.body|linebreaks }}
+        {{ post.body|safe }}
 
         <br/>
         <br/>
