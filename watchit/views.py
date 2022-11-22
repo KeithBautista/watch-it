@@ -34,12 +34,22 @@ class HomeView(ListView):
 
 def CategoryView(request, category):
     category_posts = Post.objects.filter(category=category)
-    return render(request, 'categories.html', {'category': category, 'category_posts': category_posts})
+    context = {}
+    context['category_posts'] = category_posts
+    category_menu = Category.objects.all()
+    context["category_menu"] = category_menu
+    return render(request, 'categories.html', context)
 
 
 class MovieDetailView(DetailView):
     model = Post
     template_name = 'movie_details.html'
+
+    def get_context_data(self, *args, **kwargs):
+        category_menu = Category.objects.all()
+        context = super(MovieDetailView, self).get_context_data(*args, **kwargs)
+        context["category_menu"] = category_menu
+        return context
 
 
 class AddMovieView(CreateView):
@@ -51,11 +61,23 @@ class AddMovieView(CreateView):
     you can just create a python list like
     fields = ('title', 'body') """
 
+    def get_context_data(self, *args, **kwargs):
+        category_menu = Category.objects.all()
+        context = super(AddMovieView, self).get_context_data(*args, **kwargs)
+        context["category_menu"] = category_menu
+        return context
+
 
 class UpdateMovieView(UpdateView):
     model = Post
     form_class = UpdatePost
     template_name = 'movie_update.html'
+
+    def get_context_data(self, *args, **kwargs):
+        category_menu = Category.objects.all()
+        context = super(UpdateMovieView, self).get_context_data(*args, **kwargs)
+        context["category_menu"] = category_menu
+        return context
 
 
 class DeleteMovieView(DeleteView):
@@ -63,3 +85,9 @@ class DeleteMovieView(DeleteView):
     template_name = 'movie_delete.html'
     fields = ['title',  'title_tag', 'body']
     success_url = reverse_lazy('home')
+
+    def get_context_data(self, *args, **kwargs):
+        category_menu = Category.objects.all()
+        context = super(DeleteMovieView, self).get_context_data(*args, **kwargs)
+        context["category_menu"] = category_menu
+        return context
