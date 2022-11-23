@@ -34,9 +34,7 @@ class Post(models.Model):
         """This will allow us to see title and author on admin page"""
 
     def get_absolute_url(self):
-        return reverse('movie-detail', args=(str(self.id)))
+        return reverse('home')
         """self.id is similar to pk, we're asking it to go to itself,
         once the form has been submitted"""
         # This is if you want to return home /return reverse('home')
-
-

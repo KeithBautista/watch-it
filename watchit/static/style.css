@@ -1,4 +1,9 @@
-	
+
+body {
+	word-wrap: break-word;
+
+}
+
 #section-contact {
 	background-color: rgba(52, 165, 235, .6)!important;
 	padding: 20px;
