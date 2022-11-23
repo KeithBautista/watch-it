@@ -12,7 +12,10 @@ class UserRegistrationView(generic.CreateView):
     success_url = reverse_lazy('login')
 
 
-class UserEditView(generic.CreateView):
+class UserEditView(generic.UpdateView):
     form_class = UserChangeForm
     template_name = 'registration/edit_profile.html'
     success_url = reverse_lazy('home')
+
+    def get_object(self):
+        return self.request.user
