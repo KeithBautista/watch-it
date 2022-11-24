@@ -6,7 +6,7 @@
 <h1>Add Movie Recommendation</h1>
 <br/><br/>
 <div class="form-group">
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST">
         {% csrf_token %}
         <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
         {{ form.media }}
