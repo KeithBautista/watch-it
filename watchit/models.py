@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse  # reverse is a module of django
 from datetime import datetime, date
 from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
@@ -18,7 +19,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    header_image = models.ImageField(null=True, blank=True, upload_to="images/")
+    header_image = CloudinaryField('image', default='Default')
     title_tag = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     """This will delete all of users' posts"""
