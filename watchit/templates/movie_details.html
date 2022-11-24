@@ -13,6 +13,7 @@ Post Author: {{ post.author.id}}
         <small> Created On: {{ post.post_date}} </small><br/>
         <hr>
         <br/>
+        <img src="{{ post.header_image.url }}">
         {{ post.body|safe }}
 
         <br/>
@@ -25,7 +26,7 @@ Post Author: {{ post.author.id}}
         <hr>
         <br/>
         <form action="{% url 'like_post' post.pk %}"
-        method ="POST">
+        method ="POST" enctype="multipart/form-data">
             {% csrf_token %}
 
             {% if liked %}
@@ -43,6 +44,7 @@ Post Author: {{ post.author.id}}
         <small> Created On: {{ post.post_date}} </small><br/>
         <hr>
         <br/>
+        <img src="{{ post.header_image.url }}">
         {{ post.body|safe }}
 
         <br/>
@@ -68,6 +70,7 @@ Post Author: {{ post.author.id}}
         <small> Created On: {{ post.post_date}} </small><br/>
         <hr>
         <br/>
+        <img src="{{ post.header_image.url }}">
         {{ post.body|safe }}
 
         <br/>

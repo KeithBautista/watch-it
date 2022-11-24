@@ -112,3 +112,7 @@ class DeleteMovieView(DeleteView):
         context = super(DeleteMovieView, self).get_context_data(*args, **kwargs)
         context["category_menu"] = category_menu
         return context
+
+
+def index(request):
+    return render(request, 'movie-details.html')
