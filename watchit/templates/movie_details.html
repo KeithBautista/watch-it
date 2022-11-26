@@ -83,7 +83,11 @@ Post Author: {{ post.author.id}}
     <div class="card">
         <div class="row no-gutters">
             <div class="col-sm-2">
+                {% if post.author.profile.profile_pic.url %}
                 <img class="card-img" src="{{ post.author.profile.profile_pic.url }}" alt="Profile Pic">
+                {% else %}
+                <img class="card-img" src="https://res.cloudinary.com/dq4hocok1/image/upload/v1669434603/defaultProfilePic_fepkbo.webp" alt="Profile Pic">
+                {% endif %}
             </div>
             <div class="col-sm-10">
                 <div class="card-body">
