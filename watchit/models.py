@@ -20,6 +20,7 @@ class Category(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     bio = models.TextField()
+    profile_pic = CloudinaryField('profile', default='default')
 
     def __str__(self):
         return str(self.user)
@@ -30,6 +31,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     title_tag = models.CharField(max_length=255)
     header_image = CloudinaryField('image', default='default')
+    # header_image = CloudinaryField('image', default='default')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     """This will delete all of users' posts"""
     body = RichTextField(blank=True, null=True)
