@@ -79,5 +79,6 @@ Post Author: {{ post.author.id}}
         <small>{{ total_likes }} liked this movie</small>
 {% endif %}
 
+<img src="{{ post.author.profile.profile_pic.url }}">
 
 {% endblock %}
