@@ -2,46 +2,21 @@
 
 {% block content %}
 
-<!-- Start of Image Slider -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="7000"> <!-- This is for the image slider (THE 7000 IS FOR THE AUTOMATIC TUNRING) -->
-	<ol class="carousel-indicators">
-		<li class="#carouselExampleIndicators" data-slide-to="0" class="active"></li> <!-- Beginning Slider This is why it has "active" and this is at 0 because it needs to start at 0-->
-		<li class="#carouselExampleIndicators" data-slide-to="1"></li>
-		<li class="#carouselExampleIndicators" data-slide-to="2"></li> <!-- This says how much you sliders you can have -->
-	</ol>
-	<!-- Start of Carousel Inner -->
-	<div class="carousel-inner" role="listbox">
-
-		<!-- Slide 1 -->
-		<div class="carousel-item active" style="background-image: url(https://res.cloudinary.com/dq4hocok1/image/upload/v1669263779/kkmxo4nhrt32dslhhefm.jpg);">
-		</div>
-			
-			<div class="scale-up-hor-center carousel-caption text-center" >
-				<p id="welcome">Watch It  <br> Where you can find your future favorite movies</p>
-				<a class="btn btn-warning btn-lrg" href="#section-register">Register Now!</a>
-			</div><!-- This is the text on top of the active slider that you see when the page loads -->
-
-				<!-- End of Slide 1 -->
-
-		<!-- Slide 2 -->
-		<div class="carousel-item img-fluid" style="background-image: url(https://res.cloudinary.com/dq4hocok1/image/upload/v1669261727/vafbe6ao68gl7u7ta7k7.png);">
-		</div>
-		<!-- End of Slide 2 -->
-
-		<!-- Slide 3 -->
-		<div class="carousel-item img-fluid" style="background-image: url(https://res.cloudinary.com/dq4hocok1/image/upload/v1669261287/wossiyzgglck9bj4xbec.jpg);">
-		</div>
-		<!-- End of Slide 3 -->
-
-		<!-- Start of Previous and Next Button -->
-
-		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span> <!-- This is for the previous button and the aria hidden is so that screenreaders don't see this button -->
-		</a>
-
-		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span> <!-- This is for the previous button and the aria hidden is so that screenreaders don't see this button -->
-		</a>
+<!-- Start of Carousel Section-->  
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://res.cloudinary.com/dq4hocok1/image/upload/v1669263779/kkmxo4nhrt32dslhhefm.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://res.cloudinary.com/dq4hocok1/image/upload/v1669263779/kkmxo4nhrt32dslhhefm.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://res.cloudinary.com/dq4hocok1/image/upload/v1669263779/kkmxo4nhrt32dslhhefm.jpg" alt="Third slide">
+      </div>
+    </div>
+  </div>
+   <!-- End of Carousel Section-->  
 
 
 <h1>Current Posts</h1>
