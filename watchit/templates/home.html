@@ -60,6 +60,8 @@
             {% if user.id == Post.author.id %}
                 <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a> - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
                 {{ Post.snippet|slice:":200" }}</li>
+                <img width="500" height="600" src="{{ Post.header_image.url }}">
+                
             {% else %}
                 <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a><br/>
                 {{ Post.snippet|slice:":200" }}</li>
@@ -131,10 +133,8 @@
         </div>
     </div>
     <!--End of Accordion 3-->
-    
 </div>
 <!-- End of Accordion for FAQ-->
-
 <!--<ul>
 {% for Post in object_list %}
     <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
