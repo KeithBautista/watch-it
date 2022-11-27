@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Create Profile Page{% endblock %}
+{% block content %}
+
+
+<h1>Create Profile Page</h1>
+<br/><br/>
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
+        {{ form.as_p }}
+        <button>Post</button>
+</div>
+
+
+
+{% endblock %}

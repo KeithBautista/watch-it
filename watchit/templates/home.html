@@ -62,11 +62,18 @@
                   <h5 class="card-title">{{ Post.title }}</h5>
                   <p class="card-text">{{ Post.snippet|slice:":200" }}</p>
                   <a href="{% url 'movie-detail' Post.pk %}" class="btn btn-primary">View</a>
+                  <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a>
                 </div>
               </div>
             {% else %}
-                <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a><br/>
-                {{ Post.snippet|slice:":200" }}</li>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ Post.header_image.url }}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{ Post.title }}</h5>
+                  <p class="card-text">{{ Post.snippet|slice:":200" }}</p>
+                  <a href="{% url 'movie-detail' Post.pk %}" class="btn btn-primary">View</a>
+                </div>
+              </div>
             {% endif %}
         {% endfor %}
 <!-- End  of Post Cards-->

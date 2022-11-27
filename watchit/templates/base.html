@@ -52,10 +52,10 @@
                   <a class="nav-link" href="{% url 'edit_profile' %}">Edit Settings</a>
                   {% if user.profile.id %}
                   <a class="nav-link" href="{% url 'edit-profile-page' user.profile.id %}">Edit Profile Page</a>
-                  {% else %}
-                  <a class="nav-link" href="{% url 'edit-profile-page' user.profile.id %}">Create Profile Page</a>
-                  {% endif %}
                   <a class="nav-link" href="{% url 'profile-page' user.profile.id %}">Show Profile Page</a>
+                  {% else %}
+                  <a class="nav-link" href="{% url 'create-profile-page' %}">Create Profile Page</a>
+                  {% endif %}
                 </div>
               </li>
               <li class="nav-item">

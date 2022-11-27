@@ -30,6 +30,9 @@ class Profile(models.Model):
         return str(self.user)
     # enables us to see in the admin area
 
+    def get_absolute_url(self):
+        return reverse('home')
+
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
