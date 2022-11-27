@@ -1,8 +1,49 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
 
-<h1>This is a test</h1>
-{{ page_user }}
+<div class="container bcontent">
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-sm-2">
+                {% if page_user.profile_pic.url %}
+                <img class="card-img" src="{{ page_user.profile_pic.url }}" alt="Profile Pic">
+                {% else %}
+                <img class="card-img" src="https://res.cloudinary.com/dq4hocok1/image/upload/v1669434603/defaultProfilePic_fepkbo.webp" alt="Profile Pic">
+                {% endif %}
+            </div>
+            <div class="col-sm-10">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ page_user.user.first_name }}
+                        {{ page_user.user.last_name }}
+                    </h5>
+                    <p class="small text-muted">
+                            
+                        
+                        {% if page_user.website_url %}
+                             <a target="_blank" href="{{ page_user.profile.website_url }}">Website</a>
+                        {% endif %}
+
+                        {% if page_user.twitter_url %}
+                            | <a target="_blank" href="{{ page_user.profile.twitter_url }}">Twitter</a>
+                        {% endif %}
+
+                        {% if page_user.instagram_url %}
+                            | <a target="_blank" href="{{ page_user.instagram_url }}">Instagram</a>
+                        {% endif %}
+
+                        {% if page_user.facebook_url %}
+                            | <a target="_blank" href="{{ page_user.facebook_url }}">Facebook</a>
+                        {% endif %}
+
+                    </p>
+                    <p class="card-text">{{ page_user.bio }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
