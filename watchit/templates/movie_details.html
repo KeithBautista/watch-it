@@ -40,7 +40,7 @@
         <p>No Comments Made Yet :( <br/><a href="{% url 'add-comment' post.pk %}">Add One?</a></p>
         {% else %}
             {% for comment in post.comments.all %}
-            <strong>
+            <br/><br/><strong>
                 {{ comment.name }} - 
                 {{ comment.date_added }}
             </strong>
