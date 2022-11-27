@@ -59,7 +59,9 @@ class MovieDetailView(DetailView):
 
     def get_context_data(self, *args, **kwargs):
         category_menu = Category.objects.all()
-        context = super(MovieDetailView, self).get_context_data(*args, **kwargs)
+        context = super(MovieDetailView, self).get_context_data(
+            *args,
+            **kwargs)
         getid = get_object_or_404(Post, id=self.kwargs['pk'])
         total_likes = getid.total_likes()
 
@@ -96,7 +98,9 @@ class UpdateMovieView(UpdateView):
 
     def get_context_data(self, *args, **kwargs):
         category_menu = Category.objects.all()
-        context = super(UpdateMovieView, self).get_context_data(*args, **kwargs)
+        context = super(UpdateMovieView, self).get_context_data(
+            *args,
+            **kwargs)
         context["category_menu"] = category_menu
         return context
 
@@ -109,7 +113,9 @@ class DeleteMovieView(DeleteView):
 
     def get_context_data(self, *args, **kwargs):
         category_menu = Category.objects.all()
-        context = super(DeleteMovieView, self).get_context_data(*args, **kwargs)
+        context = super(DeleteMovieView, self).get_context_data(
+            *args,
+            **kwargs)
         context["category_menu"] = category_menu
         return context
 
@@ -129,4 +135,3 @@ class AddCommentView(CreateView):
 
     def get_success_url(self):
         return reverse_lazy('movie-detail', kwargs={'pk': self.kwargs['pk']})
-

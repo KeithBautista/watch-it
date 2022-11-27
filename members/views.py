@@ -4,7 +4,8 @@ from django.views.generic import DetailView, CreateView
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
-from .forms import SignUpForm, EditProfileForm, ChangePasswordForm, ProfilePageForm
+from .forms import SignUpForm, EditProfileForm, ChangePasswordForm
+from .forms import ProfilePageForm
 from watchit.models import Profile
 # Create your views here.
 
@@ -40,13 +41,14 @@ class ProfilePageView(DetailView):
 
     def get_context_data(self, *args, **kwargs):
         users = Profile.objects.all()
-        context = super(ProfilePageView, self).get_context_data(*args, **kwargs)
+        context = super(ProfilePageView, self).get_context_data(
+            *args, **kwargs)
 
         page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
 
         context["page_user"] = page_user
         return context  # Returns context to page itself
-    
+
 
 class EditProfilePageView(generic.UpdateView):
     model = Profile
