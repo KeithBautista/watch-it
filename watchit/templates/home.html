@@ -29,23 +29,22 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <br/>
 <!-- End of Carousel Section-->  
 
 <!-- Start Of What is Watch It-->
 <section>
-    <div class="container" id="watchItInfo">
+    <div id="watchItInfo">
         <div class="row">
             <div class="col-md-4 mb-4 text-center">
-                <h3><strong>What We Do</strong></h3><br/>
+                <br/><h3><strong>What We Do</strong></h3><br/>
                 <p>Watch It is a website that provides anyone to recommend their favorite movies</p>
             </div>
             <div class="col-md-4 mb-4 text-center">
-                <h3><strong>What We Do</strong></h3><br/>
+                <br/><h3><strong>What We Do</strong></h3><br/>
                 <p>Watch It is a website that provides anyone to recommend their favorite movies</p>
             </div>
             <div class="col-md-4 mb-4 text-center">
-                <h3><strong>What We Do</strong></h3><br/>
+                <br/><h3><strong>What We Do</strong></h3><br/>
                 <p>Watch It is a website that provides anyone to recommend their favorite movies</p>
             </div>
         </div>
@@ -56,24 +55,28 @@
 
 {% for Post in object_list %}
             {% if user.id == Post.author.id %}
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ Post.header_image.url }}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">{{ Post.title }}</h5>
-                  <p class="card-text">{{ Post.snippet|slice:":200" }}</p>
-                  <a href="{% url 'movie-detail' Post.pk %}" class="btn btn-primary">View</a>
-                  <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a>
+            <div class="container">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ Post.header_image.url }}" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ Post.title }}</h5>
+                    <p class="card-text">{{ Post.snippet|slice:":200" }}</p>
+                    <a href="{% url 'movie-detail' Post.pk %}" class="btn btn-primary">View</a>
+                    <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a>
+                    </div>
                 </div>
-              </div>
+            </div>
             {% else %}
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ Post.header_image.url }}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">{{ Post.title }}</h5>
-                  <p class="card-text">{{ Post.snippet|slice:":200" }}</p>
-                  <a href="{% url 'movie-detail' Post.pk %}" class="btn btn-primary">View</a>
+            <div class="container">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ Post.header_image.url }}" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ Post.title }}</h5>
+                    <p class="card-text">{{ Post.snippet|slice:":200" }}</p>
+                    <a href="{% url 'movie-detail' Post.pk %}" class="btn btn-primary">View</a>
+                    </div>
                 </div>
-              </div>
+            </div>
             {% endif %}
         {% endfor %}
 <!-- End  of Post Cards-->
@@ -161,6 +164,33 @@
     <!--End of Accordion 3-->
 </div>
 <!-- End of Accordion for FAQ-->
+
+<!-- Start Contact Section-->
+<section id="section-contact">
+    <div class="container-fluid">
+        <div class="justify-content-center">
+
+            <div class="col-md-12 text-center">
+                <strong>Additional Links</strong>
+                <div class="col-md-12 d-flex justify-content-center">
+                <ul class="list-unstyled">
+                    <li class="list-inline-item">
+                      <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                      <a href="ttps://twitter.com/" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                  </li>
+                  </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End of Contact Section-->
  
 <!--<ul>
 {% for Post in object_list %}

@@ -1,9 +1,10 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- For Mobile Screens -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>
             {% block title %}
             Watch It
@@ -15,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/97c77f921f.js" crossorigin="anonymous"></script> <!-- FontAwesome Kit-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
+  </head>
 <body>
 
     <nav class="navbar navbar-expand-lg bg-light" id="navBarStyle">
@@ -79,41 +80,8 @@
           </div>
         </div>
       </nav>
-      
-    <div class="container">
-
     {% block content %}
 
     {% endblock %}
-    </div>
-
-    <!-- Start Contact Section-->
-    <section id="section-contact">
-        <div class="container-fluid">
-            <div class="justify-content-center">
-
-                <div class="col-md-12 text-center">
-                    <strong>Additional Links</strong>
-                    <div class="col-md-12 d-flex justify-content-center">
-                    <ul class="list-unstyled">
-                        <li class="list-inline-item">
-                          <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-                      </li>
-                      <li class="list-inline-item">
-                          <a href="ttps://twitter.com/" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-                      </li>
-                      <li class="list-inline-item">
-                          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-                      </li>
-                      </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- End of Contact Section-->
-
-  
 </body>
 </html>
