@@ -4,7 +4,7 @@ from django.views.generic import DeleteView
 """List View does a query set and provides all views of a specific post while
 the detail view shows the specific details of a post"""
 from .models import Post, Category, Comment
-from .forms import PostForm, UpdatePost
+from .forms import PostForm, UpdatePost, AddCommentForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 """We need to import Post from the models in able to use it"""
@@ -89,12 +89,6 @@ class AddMovieView(CreateView):
         return context
 
 
-class AddCommentView(CreateView):
-    model = Comment
-    template_name = 'add_comment.html'
-    fields = '__all__' 
-
-
 class UpdateMovieView(UpdateView):
     model = Post
     form_class = UpdatePost
@@ -122,3 +116,17 @@ class DeleteMovieView(DeleteView):
 
 def index(request):
     return render(request, 'movie-details.html')
+
+
+class AddCommentView(CreateView):
+    model = Comment
+    form_class = AddCommentForm
+    template_name = 'add_comment.html'
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('movie-detail', kwargs={'pk': self.kwargs['pk']})
+

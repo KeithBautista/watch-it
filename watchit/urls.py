@@ -33,5 +33,5 @@ urlpatterns = [
     path('movie/delete/<int:pk>', DeleteMovieView.as_view(), name="delete-movie"),
     path('category/<str:category>/', CategoryView, name="category"),
     path('like/<int:pk>', LikeView, name="like_post"),
-    path('movie/<int:pk>/comment/', AddCommentView, name="add-comment"),
+    path('movie/<int:pk>/comment/', AddCommentView.as_view(), name="add-comment"),
 ]
