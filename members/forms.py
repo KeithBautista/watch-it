@@ -49,7 +49,6 @@ class ProfilePageForm(forms.ModelForm):
         model = Profile
         fields = ('profile_pic', 'website_url', 'twitter_url', 'instagram_url', 'facebook_url', 'bio')
         widgets = {
-            # 'profile_pic': forms.TextInput(attrs={'class': 'form-control'}),
             'website_url': forms.TextInput(attrs={'class': 'form-control'}),
             'twitter_url': forms.TextInput(attrs={'class': 'form-control'}),
             'instagram_url': forms.TextInput(attrs={'class': 'form-control'}),

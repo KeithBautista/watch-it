@@ -2,13 +2,14 @@
 
 
 {% block content %}
+<div class="container">
     {% if user.is_authenticated %}
         {% if category_posts %}
             <h1>{{ Category.name }}</h1>
             <ul>
             {% for Post in category_posts %}
                 <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
-                {{ Post.body|slice:":200" }}</li>
+                {{ Post.snippet|slice:":200" }}</li>
             {% endfor %}
             </ul>
         {% else %}
@@ -22,7 +23,7 @@
             <ul>
             {% for Post in category_posts %}
                 <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} <br/>
-                {{ Post.body|slice:":200" }}</li>
+                {{ Post.snippet|slice:":200" }}</li>
             {% endfor %}
             </ul>
         {% else %}
@@ -31,5 +32,5 @@
 
         {% endif %}
         {% endif %}
-
+</div>
 {% endblock %}

@@ -3,138 +3,141 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-    {% if user.id == post.author.id %}
-        <h1> {{ post.title }} - {{ post.author.id}} </h1>
-        <small> By: {{ post.author}} </small><br/>
-        <small> Created On: {{ post.post_date}} </small><br/>
-        <hr>
-        <br/>
-        <img width="500" height="600" src="{{ post.header_image.url }}">
-        {{ post.body|safe }}
+<div class="container">
 
-        <br/>
-        <br/>
-        <button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
-        <button type="button" class="btn btn-outline-dark"><a href="{% url 'delete-movie' post.pk %}">Delete Movie</a></button><br/>
-        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
-
-        <br/><br/>
-        <hr>
-        <br/>
-        <form action="{% url 'like_post' post.pk %}"
-        method ="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-
-            {% if liked %}
-                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button> 
-            {% else %}
-                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> 
-            {% endif %}
-            - {{ total_likes }} liked this movie
-        </form>
-
-        <hr>
-        <h2>Comments.</h2>
-        {% if not post.comments.all %} <!--comments since in model we placed related name-->
-        <p>No Comments Made Yet :( <br/><a href="{% url 'add-comment' post.pk %}">Add One?</a></p>
-        {% else %}
-            {% for comment in post.comments.all %}
-            <br/><br/><strong>
-                {{ comment.name }} - 
-                {{ comment.date_added }}
-            </strong>
+    {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
+            <h1> {{ post.title }} - {{ post.author.id}} </h1>
+            <small> By: {{ post.author}} </small><br/>
+            <small> Created On: {{ post.post_date}} </small><br/>
+            <hr>
             <br/>
-            {{ comment.body }}
-            {% endfor %}
-        <br/><br/><a href="{% url 'add-comment' post.pk %}">Add a Comment?</a>
-        {% endif %}
+            <img width="500" height="600" src="{{ post.header_image.url }}">
+            {{ post.body|safe }}
 
+            <br/>
+            <br/>
+            <button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
+            <button type="button" class="btn btn-outline-dark"><a href="{% url 'delete-movie' post.pk %}">Delete Movie</a></button><br/>
+            <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
 
-    {% else %}
-        <h1> {{ post.title }} - {{ post.author.id}} </h1>
-        <small> By: {{ post.author}} </small><br/>
-        <small> Created On: {{ post.post_date}} </small><br/>
-        <hr>
-        <br/>
-        <img width="500" height="600" src="{{ post.header_image.url }}">
-        {{ post.body|safe }}
+            <br/><br/>
+            <hr>
+            <br/>
+            <form action="{% url 'like_post' post.pk %}"
+            method ="POST" enctype="multipart/form-data">
+                {% csrf_token %}
 
-        <br/>
-        <br/>
-        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
-        <br/><br/>
-        <hr>
-        <br/>
-        <form action="{% url 'like_post' post.pk %}"
-        method ="POST">
-            {% csrf_token %}
-            {% if liked %}
-                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button> 
-            {% else %}
-                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> 
-            {% endif %}
-            - {{ total_likes }} liked this movie
-        </form>
-        <hr>
-        <h2>Comments.</h2>
-    {% endif %}
-{% else %}
-        <h1> {{ post.title }} </h1>
-        <small> By: {{ post.author}} </small><br/>
-        <small> Created On: {{ post.post_date}} </small><br/>
-        <hr>
-        <br/>
-        <img width="500" height="600" src="{{ post.header_image.url }}">
-        {{ post.body|safe }}
-
-        <br/>
-        <br/>
-        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button><br/> 
-        <small>{{ total_likes }} liked this movie</small>
-        <hr>
-        <h2>Comments.</h2>
-{% endif %}
-
-<div class="container bcontent">
-    <div class="card">
-        <div class="row no-gutters">
-            <div class="col-sm-2">
-                {% if post.author.profile.profile_pic.url %}
-                <img class="card-img" src="{{ post.author.profile.profile_pic.url }}" alt="Profile Pic">
+                {% if liked %}
+                    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button> 
                 {% else %}
-                <img class="card-img" src="https://res.cloudinary.com/dq4hocok1/image/upload/v1669434603/defaultProfilePic_fepkbo.webp" alt="Profile Pic">
+                    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> 
                 {% endif %}
-            </div>
-            <div class="col-sm-10">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        {{ post.author.first_name }}
-                        {{ post.author.last_name }}
-                    </h5>
-                    <p class="small text-muted">
-                            
-                        {% if post.author.profile.id %}
-                            <a href="{% url 'profile-page' post.author.profile.id %}">Profile Page</a>
-                        {% endif %}
-                        {% if post.author.profile.website_url %}
-                            | <a target="_blank" href="{{ post.author.profile.website_url }}">Website</a>
-                        {% endif %}
+                - {{ total_likes }} liked this movie
+            </form>
 
-                        {% if post.author.profile.twitter_url %}
-                            | <a target="_blank" href="{{ post.author.profile.twitter_url }}">Twitter</a>
-                        {% endif %}
+            <hr>
+            <h2>Comments.</h2>
+            {% if not post.comments.all %} <!--comments since in model we placed related name-->
+            <p>No Comments Made Yet :( <br/><a href="{% url 'add-comment' post.pk %}">Add One?</a></p>
+            {% else %}
+                {% for comment in post.comments.all %}
+                <br/><br/><strong>
+                    {{ comment.name }} - 
+                    {{ comment.date_added }}
+                </strong>
+                <br/>
+                {{ comment.body }}
+                {% endfor %}
+            <br/><br/><a href="{% url 'add-comment' post.pk %}">Add a Comment?</a>
+            {% endif %}
 
-                        {% if post.author.profile.instagram_url %}
-                            | <a target="_blank" href="{{ post.author.profile.instagram_url }}">Instagram</a>
-                        {% endif %}
 
-                        {% if post.author.profile.facebook_url %}
-                            | <a target="_blank" href="{{ post.author.profile.facebook_url }}">Facebook</a>
-                        {% endif %}
+        {% else %}
+            <h1> {{ post.title }} - {{ post.author.id}} </h1>
+            <small> By: {{ post.author}} </small><br/>
+            <small> Created On: {{ post.post_date}} </small><br/>
+            <hr>
+            <br/>
+            <img width="500" height="600" src="{{ post.header_image.url }}">
+            {{ post.body|safe }}
 
-                    </p>
-                    <p class="card-text">{{ post.author.profile.bio }}</p>
+            <br/>
+            <br/>
+            <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+            <br/><br/>
+            <hr>
+            <br/>
+            <form action="{% url 'like_post' post.pk %}"
+            method ="POST">
+                {% csrf_token %}
+                {% if liked %}
+                    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button> 
+                {% else %}
+                    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> 
+                {% endif %}
+                - {{ total_likes }} liked this movie
+            </form>
+            <hr>
+            <h2>Comments.</h2>
+        {% endif %}
+    {% else %}
+            <h1> {{ post.title }} </h1>
+            <small> By: {{ post.author}} </small><br/>
+            <small> Created On: {{ post.post_date}} </small><br/>
+            <hr>
+            <br/>
+            <img width="500" height="600" src="{{ post.header_image.url }}">
+            {{ post.body|safe }}
+
+            <br/>
+            <br/>
+            <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button><br/> 
+            <small>{{ total_likes }} liked this movie</small>
+            <hr>
+            <h2>Comments.</h2>
+    {% endif %}
+
+    <div class="container bcontent">
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-sm-2">
+                    {% if post.author.profile.profile_pic.url %}
+                    <img class="card-img" src="{{ post.author.profile.profile_pic.url }}" alt="Profile Pic">
+                    {% else %}
+                    <img class="card-img" src="https://res.cloudinary.com/dq4hocok1/image/upload/v1669434603/defaultProfilePic_fepkbo.webp" alt="Profile Pic">
+                    {% endif %}
+                </div>
+                <div class="col-sm-10">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ post.author.first_name }}
+                            {{ post.author.last_name }}
+                        </h5>
+                        <p class="small text-muted">
+                                
+                            {% if post.author.profile.id %}
+                                <a href="{% url 'profile-page' post.author.profile.id %}">Profile Page</a>
+                            {% endif %}
+                            {% if post.author.profile.website_url %}
+                                | <a target="_blank" href="{{ post.author.profile.website_url }}">Website</a>
+                            {% endif %}
+
+                            {% if post.author.profile.twitter_url %}
+                                | <a target="_blank" href="{{ post.author.profile.twitter_url }}">Twitter</a>
+                            {% endif %}
+
+                            {% if post.author.profile.instagram_url %}
+                                | <a target="_blank" href="{{ post.author.profile.instagram_url }}">Instagram</a>
+                            {% endif %}
+
+                            {% if post.author.profile.facebook_url %}
+                                | <a target="_blank" href="{{ post.author.profile.facebook_url }}">Facebook</a>
+                            {% endif %}
+
+                        </p>
+                        <p class="card-text">{{ post.author.profile.bio }}</p>
+                    </div>
                 </div>
             </div>
         </div>

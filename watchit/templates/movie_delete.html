@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<div class="container">
+
 {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
     <h1>Delete Movie Recommendation</h1>
@@ -25,4 +27,5 @@
         <button class="nav-link" href="{% url 'login' %}">Login</button>
 {% endif %}
 
+</div>
  {% endblock %}
