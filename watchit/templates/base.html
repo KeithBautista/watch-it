@@ -45,20 +45,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'add-movie' %}">Add Movie</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Profile
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="nav-link" href="{% url 'edit_profile' %}">Edit Settings</a>
-                  {% if user.profile.id %}
-                  <a class="nav-link" href="{% url 'edit-profile-page' user.profile.id %}">Edit Profile Page</a>
-                  <a class="nav-link" href="{% url 'profile-page' user.profile.id %}">Show Profile Page</a>
-                  {% else %}
-                  <a class="nav-link" href="{% url 'create-profile-page' %}">Create Profile Page</a>
-                  {% endif %}
-                </div>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
               </li>
@@ -71,6 +57,23 @@
               </li>
               {% endif %}
             </ul>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{user.first_name}} {{user.last_name}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="nav-link" href="{% url 'edit_profile' %}">Edit Settings</a>
+                  {% if user.profile.id %}
+                  <a class="nav-link" href="{% url 'edit-profile-page' user.profile.id %}">Edit Profile Page</a>
+                  <a class="nav-link" href="{% url 'profile-page' user.profile.id %}">Show Profile Page</a>
+                  {% else %}
+                  <a class="nav-link" href="{% url 'create-profile-page' %}">Create Profile Page</a>
+                  {% endif %}
+                </div>
+              </li>
+            </ul>
+
             <!--
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

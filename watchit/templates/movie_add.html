@@ -2,6 +2,7 @@
 {% block title %}Add Movie Recommendation{% endblock %}
 {% block content %}
 
+<div class="container">
 {% if user.is_authenticated %}
 <h1>Add Movie Recommendation</h1>
 <br/><br/>
@@ -25,5 +26,6 @@
     <button class="nav-link" href="{% url 'registration' %}">Register</button>
     <button class="nav-link" href="{% url 'login' %}">Login</button>
 {% endif %}
+</div>
 
 {% endblock %}
