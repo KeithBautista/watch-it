@@ -2,7 +2,7 @@
 {% block title %}Edit Profile Page{% endblock %}
 
 {% block content %}
-
+<div class="container">
 {% if user.is_authenticated %}
     {% if user.id == profile.user.id %} <!--If User Id is the same as Profile ID-->
         <h1>Edit Profile Page</h1>
@@ -20,5 +20,5 @@
 {% else %}
 <h2>Please Sign in to Edit your profile</h2>
 {% endif %}
-
+</div>
 {% endblock %}

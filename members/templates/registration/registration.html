@@ -2,6 +2,8 @@
 {% block title %}Register{% endblock %}
 {% block content %}
 
+<div class="container">
+
 {% if user.is_authenticated %}
 
 <h2>You are already logged in! Press <a href="{% url 'home' %}">here</a> to go back home</h2>
@@ -50,5 +52,5 @@
 </form>
     <p>Already a user? Sign in <a href="{% url 'login' %}">here!</a></p>
 {% endif %}
-
+</div>
 {% endblock %}
