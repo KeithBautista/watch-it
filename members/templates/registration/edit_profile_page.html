@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Edit Profile Page{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    {% if user.id == profile.user.id %} <!--If User Id is the same as Profile ID-->
+        <h1>Edit Profile Page</h1>
+        <br/><br/>
+        <div class="form-group">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
+                {{ form.as_p }}
+                <button>Post</button>
+        </div>
+    {% else %}
+    <h2>You are not the correct user to edit this page</h2>
+    {% endif %}
+{% else %}
+<h2>Please Sign in to Edit your profile</h2>
+{% endif %}
+
+{% endblock %}
