@@ -45,4 +45,11 @@ class ProfilePageView(DetailView):
         page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
 
         context["page_user"] = page_user
-        return context
+        return context  # Returns context to page itself
+        
+
+class EditProfilePageView(generic.UpdateView):
+    model = Profile
+    template_name = 'registration/edit_profile_page.html'
+    fields = ['bio', 'profile_pic', 'website_url', 'twitter_url', 'instagram_url', 'facebook_url']
+    success_url = reverse_lazy('home')
