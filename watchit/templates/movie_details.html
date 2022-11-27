@@ -3,9 +3,6 @@
 
 {% block content %}
 
-current user: {{user.id}}
-Post Author: {{ post.author.id}}
-
 {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
         <h1> {{ post.title }} - {{ post.author.id}} </h1>

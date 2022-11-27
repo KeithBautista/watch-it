@@ -52,7 +52,26 @@
     </div>
 </section>
 <!-- End Of What is Watch It-->
+<!-- Start of Post Cards-->
 
+{% for Post in object_list %}
+            {% if user.id == Post.author.id %}
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ Post.header_image.url }}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{ Post.title }}</h5>
+                  <p class="card-text">{{ Post.snippet|slice:":200" }}</p>
+                  <a href="{% url 'movie-detail' Post.pk %}" class="btn btn-primary">View</a>
+                </div>
+              </div>
+            {% else %}
+                <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a><br/>
+                {{ Post.snippet|slice:":200" }}</li>
+            {% endif %}
+        {% endfor %}
+<!-- End  of Post Cards-->
+
+<!-- List Post Example
 <h1>Current Posts</h1>
 {% if user.is_authenticated %}
         <ul>
@@ -77,7 +96,7 @@
         </ul>
 {% endif %}
 
-</small> <br/>
+</small> <br/> -->
 
 <!-- Start of Accordion for FAQ-->
 <h1 class="text-center">Frequently Asked Questions</h1>
@@ -135,25 +154,7 @@
     <!--End of Accordion 3-->
 </div>
 <!-- End of Accordion for FAQ-->
-
-
-
-  {% for Post in object_list %}
-            {% if user.id == Post.author.id %}
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ Post.header_image.url }}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">{{ Post.title }}</h5>
-                  <p class="card-text">{{ Post.snippet|slice:":200" }}</p>
-                  <a href="{% url 'movie-detail' Post.pk %}" class="btn btn-primary">View</a>
-                </div>
-              </div>
-            {% else %}
-                <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'category' Post.category %}">{{ Post.category }}</a><br/>
-                {{ Post.snippet|slice:":200" }}</li>
-            {% endif %}
-        {% endfor %}
-  
+ 
 <!--<ul>
 {% for Post in object_list %}
     <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
