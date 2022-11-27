@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.views.generic import DeleteView
 """List View does a query set and provides all views of a specific post while
 the detail view shows the specific details of a post"""
-from .models import Post, Category
+from .models import Post, Category, Comment
 from .forms import PostForm, UpdatePost
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
@@ -87,6 +87,12 @@ class AddMovieView(CreateView):
         context = super(AddMovieView, self).get_context_data(*args, **kwargs)
         context["category_menu"] = category_menu
         return context
+
+
+class AddCommentView(CreateView):
+    model = Comment
+    template_name = 'add_comment.html'
+    fields = '__all__' 
 
 
 class UpdateMovieView(UpdateView):

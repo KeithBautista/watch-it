@@ -37,7 +37,7 @@
         <hr>
         <h2>Comments.</h2>
         {% if not post.comments.all %} <!--comments since in model we placed related name-->
-        <p>No Comments Made Yet :( <a href="#">Add One?</a></p>
+        <p>No Comments Made Yet :( <br/><a href="{% url 'add-comment' post.pk %}">Add One?</a></p>
         {% else %}
             {% for comment in post.comments.all %}
             <strong>
@@ -47,7 +47,7 @@
             <br/>
             {{ comment.body }}
             {% endfor %}
-        <br/><br/><a href="">Add a Comment?</a>
+        <br/><br/><a href="{% url 'add-comment' post.pk %}">Add a Comment?</a>
         {% endif %}
 
 
