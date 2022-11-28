@@ -70,25 +70,12 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <!--Category Menu Code-->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <!--<li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle cool-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Categories
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                  {% for item in category_menu %}
-                  <a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a>
-                  {% endfor %}
-
-                </div>
-              </li>-->
               {% if user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link cool-link" href="{% url 'add-movie' %}">Add Movie</a>
               </li>
-              </ul>
+            </ul>
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle cool-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

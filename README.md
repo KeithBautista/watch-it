@@ -107,3 +107,81 @@ The page created is structured in a way which is easy recognizable to other web 
  <li>Edit Movie: This, once user is logged in and is the correct user that has created the movie post, will be able to delete, edit the content as well as change the image shown in the home.html file</li>
  To add to this there are various files such as login, changepassword, edit-profile-page and more which enables the user to make their account their own and personalize.
 </ul>
+
+### Technologies Used During Creation
+
+- HTML
+- CSS
+- Django
+- JavaScript
+- Jquery (Owl Carousel)
+
+## Frameworks & Tools
+- Bootstrap v5.2
+- Git
+- Github
+- Balsamiq
+- Font Awesome
+- Favicon.io
+- Unsplash
+- Pexels
+- imagecompressor (Compressing Images)
+- cloudconvert (Converting Images into WebP Format)
+- Am I Responsive
+- Google Lens
+- Owl Carousel
+
+## Features
+### Implemented Features
+<ul>
+ <li>Registration Page: Allows users to create a user</li>
+ <li>nav-bar: Enables users to navigate around the site easier and in an intuitive way</li>
+ <li>Edit Movie Page: Allows logged in users to edit the post that they have made</li>
+ <li>FAQ: Allows users a quick look into the frequently asked questions and their answers</li>
+ <li>Edit Profile Page: Allows users to create their own profile page which makes the experience more personable</li>
+ <li>Movie Detail Page: Allows users to view the movie as well as the synopsis written by the user who has posted said movie</li>
+</ul>
+
+### Features left to implement
+<ul>
+ <li>Categories for the Movies as they are currently bunched up in the home.html file</li>
+  <li>Allow users to add favorites rather than browsing through the movies posts</li>
+</ul>
+
+## Performance
+Below is the report generated from lighthouse via Chrome DevTools for the Desktop website. Whilst this could be better, precautions I have taken have been to convert images to WEBP to enable a fast load time. Though I don't doubt there there are further changes that need to be made to maximize this.
+<img src="readmeassets/lightHousePerformance.png">
+
+## Deployment
+A live demo of the website can be found <a href="https://kb-watchit.herokuapp.com/" target="_blank">**HERE**</a><br>
+<ol>
+    <li>A new repository was created using 'Code-Instutute-Org/gitpod-full-template'</li>
+    <li>A meaningful name was given to the new repository and 'Create Repository' was selected</li>
+    <li>The repository was then opened on GitHub by clicking the 'Gitpod' button to build the GitPod workspace which would allow me to build and edit the code used to make the <em>Project Name</em> website/application</li>
+    <li>Version control was used throughout the project using the following commands in the terminal.
+        <ul>
+            <li>git add . <strong>OR</strong> git add "file name" - to stage the changes and get them ready for being committed to the local repo.</li> 
+            <li>git commit -m "small description of update" - to save the change and commit the change to the local repo</li>
+            <li>git push - to push all committed changes to the GitHub repo associated with the GitPod workspace</li>
+        </ul>
+    </li>
+</ol>
+
+### Project Deployment
+This project was deployed via Heroku by carrying out the following:
+<ol>
+    <li>Create the gitpod repo from the template via the gitpod button in github.</li>
+    <li>Log in to Heroku and create a new app. Or you can create new app within the terminal</li>
+    <li>Create ElephantSQL Account and use url details to link app and database together</li>
+    <li>Complete the config vars section</li>
+    <li>Link Heroku and GitHub accounts together</li>
+    <li>Select the repo (via Heroku) that you want to make an app of and give it a name in Heroku.</li>
+    <li>Click on deploy.</li>
+</ol>
+
+## Credits
+### Code
+All code used in this project was taken from the Code Institute lessons, as well as Django's documentation.
+
+# Acknowledgements
+This website, Watch It was designed and developed in conjunction with the Full Stack Developer Diploma course with specialty in ecommerce at Code Institute. I would like to thank Code Institute as well as the content creators in youtube for Django specifically for getting me through this!
