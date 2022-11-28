@@ -1,108 +1,109 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<a href="https://kb-watchit.herokuapp.com/"><h1>Watch It </h1></a>
 
-Welcome KeithBautista,
+## Contents
+<ul>
+    <li>
+        <a href="#Introduction"><strong>Introduction</strong></a>
+    </li>
+    <li>
+        <a href="#UX"><strong>UX</strong></a>               
+    </li>
+    <li>
+        <a href="#Technologies"><strong>Technologies</strong></a>
+    </li>
+    <li>
+        <a href="#Features"><strong>Features</strong></a>
+    </li>
+    <li>
+        <a href="#Testing"><strong>Testing</strong></a>   
+    </li>
+    <li>
+        <a href="#Deployment"><strong>Deployment</strong></a>
+    </li>
+    <li>
+       <a href="#Credits"><strong>Credits</strong></a> 
+    </li>
+    <li>
+        <a href="#Screenshots"><strong>Screenshots</strong></a>
+    </li>
+    <li>
+        <a href="#overall-thoughts"><strong>Overall Thoughts</strong></a>
+    </li>
+</ul>
+<hr>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Introduction
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Portfolio Project 4: Full Stack Frameworks - Code Institue - Deadline 28th January 2022
 
-## Gitpod Reminders
+This is my sumission for CodeInstitue's Project Portfolio Four.<br/>It uses various technologies such as Python, HTML, CSS, Javascript aswell as Django and ElephantSQL which was recently changed as Heroku had changed their terms.<br/> I created this site as I was interested in movies as well as finding new ones to watch as sometimes browsing through the main providers take too long and have no ability to see if people have liked the movie or not.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Demo
+A live of the website can be found <a href="https://kb-watchit.herokuapp.com/"><strong>HERE</strong></a><br>
 
-`python3 -m http.server`
+## UX
 
-A blue button should appear to click: _Make Public_,
+As many now rely on the internet to browse and access services, UX has become increasingly important than before.
 
-Another blue button should appear to click: _Open Browser_.
+## Strategy
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Aims
 
-A blue button should appear to click: _Make Public_,
+<ol>
+  <li>To allow the opportunity for users to create a post of a movie the completely recommend to others</li>
+  <li>To allow un-logged in users to browse through posts and find a movie they may potentially watch</li>
+  <li>To allow users logged in to like posts and visualise the amount of likes on a particular movie</li>
+  <li>To allow users both logged in and out to create a comment on a post to mention why they particually liked the movie</li>
+  <li>To allow users to create a profile to enable them to post a movie</li>
+  <li>To allow users to create a profile page with social links and bio to make it more personable</li>
+</ol>
 
-Another blue button should appear to click: _Open Browser_.
+### Target Audience(s)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<ol>
+  <li>Users who are interested in watching movies</li>
+  <li>Users who like to read and would like to review a synopsis of a movie prior to watching</li>
+</ol>
 
-To log into the Heroku toolbelt CLI:
+### User Stories
+ <li>As a user I can view the movies recently added whilst not needing to log in</li>
+ <li>As a user I can view each movie more in depth by clicking on it as I may want to read the synopsis prior to committing to watch the movie</li>
+ <li>As a user I can create a profile to be able to post movies I personally like for others to enjoy</li>
+ <li>As a user I can create a profile page and include my social media links</li>
+ <li>As a user I can comment on a post in order to tell other users if I like a movie or not</li>
+ <li>As a user I can like a movie in order to let other users know that a particular movie was liked</li>
+ <li>As a user I can delete my own posts in case I change my mind about a specific movie</li>
+ <li>As a user I can edit my own posts in case I change my mind about a specific movie or perhaps have left out detail or want to upload a new movie poster</li>
+ <li>As a user I can create an account</li>
+ <li>As a user I can edit the settings on my account in case I need a password reset</li>
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+ ### Scope
+ It is sometimes more beneficial to develop a website based on the MMP (Minimum Marketable Product). Although unfortuantely as this project requires more advanced concepts aswell as possible time constrains, it may be the case that a MVP (Minimum Viable Product) be created instead. This will allow the basic functions of the website to be implemented whereby time can be more spent on the basics rather than features that our users may potentially never look at.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+ Whilst using the MVP
+ <ul>
+ <li>We will create a clear and consise website that will have all the necessary features needed for such a site.</li>
+ <li>We will create a site with minimum levels of UX whilst still being intuitive enough for our users.</li>
+ <li>We will meet the requirements of our beloved users</li>
+ </ul>
 
-------
+ Whilst following the MVP model, to meet the user and business goals, our website will include:
+ <ul>
+ <li>A nav-bar that underlines the specific text currently on in order to enable users to identify where they are to be</li>
+ <li>Links to the associated social media pages of the organization</li>
+ <li>A registration form in order for users to sign up to the site.</li>
+ <li>An add movie form in order for the users to provide their movie recommendations</li>
+ <li>An edit movie form in case the user would like to edit anything in particular on the movie posted</li>
+ </ul>
 
-## Release History
+### Structure of Pages
+ 
+The page created is structured in a way which is easy recognizable to other web pages in the way it has a navigation bar on the top of the page and a footer at the bottom of the home.html. The navaigation bar is duplicated in each page so that it is easy to navigate to other pages from the main home page. On this, the site it divided up into multiple pages which each own having a function.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+<ul>
+ <li>Home: This is the main page where you will find the most recent posts that have been made/posted by other users. Here you will also find the nav bar and footer as well as the frequently asked questions.</li>
+ <li>Registration: This is where users will find themselves creating an account to be able to post movie recommendations</li>
+ <li>Add Movie: This, once user is logged in allows them to create movie recommendations with the ability to edit the synopsis as well as the image that will be see in the home page.</li>
+ <li>Edit Movie: This, once user is logged in and is the correct user that has created the movie post, will be able to delete, edit the content as well as change the image shown in the home.html file</li>
+ To add to this there are various files such as login, changepassword, edit-profile-page and more which enables the user to make their account their own and personalize.
+</ul>
