@@ -60,6 +60,7 @@ As many now rely on the internet to browse and access services, UX has become in
 </ol>
 
 ### User Stories
+<ol>
  <li>As a user I can view the movies recently added whilst not needing to log in</li>
  <li>As a user I can view each movie more in depth by clicking on it as I may want to read the synopsis prior to committing to watch the movie</li>
  <li>As a user I can create a profile to be able to post movies I personally like for others to enjoy</li>
@@ -70,6 +71,7 @@ As many now rely on the internet to browse and access services, UX has become in
  <li>As a user I can edit my own posts in case I change my mind about a specific movie or perhaps have left out detail or want to upload a new movie poster</li>
  <li>As a user I can create an account</li>
  <li>As a user I can edit the settings on my account in case I need a password reset</li>
+ </ol>
 
  ### Scope
  It is sometimes more beneficial to develop a website based on the MMP (Minimum Marketable Product). Although unfortuantely as this project requires more advanced concepts aswell as possible time constrains, it may be the case that a MVP (Minimum Viable Product) be created instead. This will allow the basic functions of the website to be implemented whereby time can be more spent on the basics rather than features that our users may potentially never look at.
@@ -101,6 +103,28 @@ The page created is structured in a way which is easy recognizable to other web 
  <li>Edit Movie: This, once user is logged in and is the correct user that has created the movie post, will be able to delete, edit the content as well as change the image shown in the home.html file</li>
  To add to this there are various files such as login, changepassword, edit-profile-page and more which enables the user to make their account their own and personalize.
 </ul>
+
+## Wireframes
+<details>
+<summary>Home</summary>
+<img src="">
+</details>
+<details>
+<summary>Menu</summary>
+<img src="">
+</details>
+<details>
+<summary>Gallery</summary>
+<img src="">
+</details>
+<details>
+<summary>Contact Us</summary>
+<img src="">
+</details>
+<details>
+<summary>404</summary>
+<img src="">
+</details>
 
 ## Technologies Used During Creation
 
@@ -141,7 +165,7 @@ The page created is structured in a way which is easy recognizable to other web 
  <li>Movie Detail Page: Allows users to view the movie as well as the synopsis written by the user who has posted said movie</li>
  <img src="readmeassets/movieDetailPage.png">
  <li>Comment, Like and Profile Page: Allows users to like, comment and view the profile page of the user that created the movie post</li>
- <img src="readmeassets/movieDetailPage.png">
+ <img src="readmeassets/commentLikeAndProfilePage.png">
 </ul>
 
 ### Features left to implement

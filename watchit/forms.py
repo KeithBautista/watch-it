@@ -41,7 +41,7 @@ class PostForm(forms.ModelForm):
 class UpdatePost(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'title_tag', 'category', 'body', 'snippet')
+        fields = ('title', 'title_tag', 'body', 'snippet')
         # Contains the fields that you have in your form in your models.py
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
