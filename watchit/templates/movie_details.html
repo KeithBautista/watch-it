@@ -8,7 +8,7 @@
     {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
             <br/><br/>
-            <h1> {{ post.title }} - {{ post.author.id}} </h1>
+            <h1> {{ post.title }} </h1>
             <small> By: {{ post.author}} </small><br/>
             <small> Created On: {{ post.post_date}} </small><br/>
             <hr>
@@ -61,7 +61,7 @@
 
         {% else %}
             <br/><br/>
-            <h1> {{ post.title }} - {{ post.author.id}} </h1>
+            <h1> {{ post.title }} </h1>
             <small> By: {{ post.author}} </small><br/>
             <small> Created On: {{ post.post_date}} </small><br/>
             <hr>
