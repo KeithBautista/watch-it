@@ -129,11 +129,19 @@ The page created is structured in a way which is easy recognizable to other web 
 ### Implemented Features
 <ul>
  <li>Registration Page: Allows users to create a user</li>
+ <img src="readmeassets/registrationPage.png">
  <li>nav-bar: Enables users to navigate around the site easier and in an intuitive way</li>
+ <img src="readmeassets/navbar.png">
  <li>Edit Movie Page: Allows logged in users to edit the post that they have made</li>
+ <img src="readmeassets/editMovieRecommendation.png">
  <li>FAQ: Allows users a quick look into the frequently asked questions and their answers</li>
+  <img src="readmeassets/faq.png">
  <li>Edit Profile Page: Allows users to create their own profile page which makes the experience more personable</li>
+  <img src="readmeassets/editProfilePage.png">
  <li>Movie Detail Page: Allows users to view the movie as well as the synopsis written by the user who has posted said movie</li>
+ <img src="readmeassets/movieDetailPage.png">
+ <li>Comment, Like and Profile Page: Allows users to like, comment and view the profile page of the user that created the movie post</li>
+ <img src="readmeassets/movieDetailPage.png">
 </ul>
 
 ### Features left to implement
