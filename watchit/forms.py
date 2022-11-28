@@ -3,12 +3,11 @@ from .models import Post, Category, Comment
 
 choices = Category.objects.all().values_list('name', 'name')
 # Here you are calling the category object and get the values inside it
-
 choice_list = []
 
 for item in choices:
     choice_list.append(item)
-    # This will loop through the choices in the choices lise
+    # This will loop through the choices in the choices list
 
 
 class PostForm(forms.ModelForm):
