@@ -12,7 +12,7 @@
                 {% csrf_token %}
                 <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
                 {{ form.as_p }}
-                <button>Post</button>
+                <button>Update Profile</button>
         </div>
     {% else %}
     <h2>You are not the correct user to edit this page</h2>

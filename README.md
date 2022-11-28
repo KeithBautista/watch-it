@@ -117,7 +117,7 @@ The page created is structured in a way which is easy recognizable to other web 
 
 
 
-## Technologies Used During Creation
+## Technologies
 
 - HTML
 - CSS
