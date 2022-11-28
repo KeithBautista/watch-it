@@ -15,7 +15,7 @@
         <form method="POST">
             {% csrf_token %}
             <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
-            <strong>Are you sure you want to delete {{ Post.title }}?</strong>
+            <strong>Are you sure you want to delete {{ Post.author.title }}?</strong><br/>
             <button>Delete Movie</button>
     </div>
     {% else %}

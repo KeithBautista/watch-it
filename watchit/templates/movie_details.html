@@ -7,27 +7,33 @@
 
     {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
+            <br/><br/>
             <h1> {{ post.title }} - {{ post.author.id}} </h1>
             <small> By: {{ post.author}} </small><br/>
             <small> Created On: {{ post.post_date}} </small><br/>
             <hr>
             <br/>
-            <img width="500" height="600" src="{{ post.header_image.url }}">
-            {{ post.body|safe }}
-
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <img width="500" height="600" src="{{ post.header_image.url }}">
+                </div>
+                <div class="col-md-6">
+                    {{ post.body|safe }}<br/>
+                    <div class="row">
+                        <button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
+                        <button type="button" class="btn btn-outline-dark"><a href="{% url 'delete-movie' post.pk %}">Delete Movie</a></button><br/>
+                        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+                    </div>
+                </div>
+            </div>
             <br/>
             <br/>
-            <button type="button" class="btn btn-outline-dark"><a href="{% url 'edit-movie' post.pk %}">Edit Movie</a></button><br/>
-            <button type="button" class="btn btn-outline-dark"><a href="{% url 'delete-movie' post.pk %}">Delete Movie</a></button><br/>
-            <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
-
             <br/><br/>
             <hr>
             <br/>
             <form action="{% url 'like_post' post.pk %}"
             method ="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-
                 {% if liked %}
                     <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button> 
                 {% else %}
@@ -37,7 +43,7 @@
             </form>
 
             <hr>
-            <h2>Comments.</h2>
+            <h2>Comments...</h2>
             {% if not post.comments.all %} <!--comments since in model we placed related name-->
             <p>No Comments Made Yet :( <br/><a href="{% url 'add-comment' post.pk %}">Add One?</a></p>
             {% else %}
@@ -54,18 +60,25 @@
 
 
         {% else %}
+            <br/><br/>
             <h1> {{ post.title }} - {{ post.author.id}} </h1>
             <small> By: {{ post.author}} </small><br/>
             <small> Created On: {{ post.post_date}} </small><br/>
             <hr>
             <br/>
-            <img width="500" height="600" src="{{ post.header_image.url }}">
-            {{ post.body|safe }}
-
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <img width="500" height="600" src="{{ post.header_image.url }}">
+                </div>
+                <div class="col-md-6">
+                    {{ post.body|safe }}<br/>
+                    <div class="row">
+                        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+                    </div>
+                </div>
+            </div>
             <br/>
             <br/>
-            <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
-            <br/><br/>
             <hr>
             <br/>
             <form action="{% url 'like_post' post.pk %}"
@@ -79,23 +92,58 @@
                 - {{ total_likes }} liked this movie
             </form>
             <hr>
-            <h2>Comments.</h2>
+            <h2>Comments...</h2>
+            {% if not post.comments.all %} <!--comments since in model we placed related name-->
+            <p>No Comments Made Yet :( <br/><a href="{% url 'add-comment' post.pk %}">Add One?</a></p>
+            {% else %}
+                {% for comment in post.comments.all %}
+                <br/><br/><strong>
+                    {{ comment.name }} - 
+                    {{ comment.date_added }}
+                </strong>
+                <br/>
+                {{ comment.body }}
+                {% endfor %}
+            <br/><br/><a href="{% url 'add-comment' post.pk %}">Add a Comment?</a>
+            {% endif %}
         {% endif %}
     {% else %}
+            <br/><br/>
             <h1> {{ post.title }} </h1>
             <small> By: {{ post.author}} </small><br/>
             <small> Created On: {{ post.post_date}} </small><br/>
             <hr>
             <br/>
-            <img width="500" height="600" src="{{ post.header_image.url }}">
-            {{ post.body|safe }}
-
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <img width="500" height="600" src="{{ post.header_image.url }}">
+                </div>
+                <div class="col-md-6">
+                    {{ post.body|safe }}<br/>
+                    <div class="row">
+                        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+                    </div>
+                </div>
+            </div>
             <br/>
-            <br/>
-            <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button><br/> 
-            <small>{{ total_likes }} liked this movie</small>
+            <br/> 
+            <small>{{ total_likes }} liked this movie to like this movie please <a href="{% url 'login' %}">Login</a></small>
             <hr>
-            <h2>Comments.</h2>
+            <h2>Comments...</h2>
+            {% if not post.comments.all %} <!--comments since in model we placed related name-->
+            <p>No Comments Made Yet :( <br/><a href="{% url 'add-comment' post.pk %}">Add One?</a></p>
+            {% else %}
+                {% for comment in post.comments.all %}
+                <br/><br/><strong>
+                    {{ comment.name }} - 
+                    {{ comment.date_added }}
+                </strong>
+                <br/>
+                {{ comment.body }}
+                {% endfor %}
+            <br/><br/><a href="{% url 'add-comment' post.pk %}">Add a Comment?</a>
+            {% endif %}
+
     {% endif %}
 
     <div class="container bcontent">

@@ -37,7 +37,7 @@ class Profile(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255)
     title_tag = models.CharField(max_length=255)
-    header_image = CloudinaryField('image', default='default')
+    header_image = CloudinaryField('image', default='https://res.cloudinary.com/dq4hocok1/image/upload/v1669602662/imageNotAvailable_uklilq.webp')
     # header_image = CloudinaryField('image', default='default')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     """This will delete all of users' posts"""

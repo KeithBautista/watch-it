@@ -1,3 +1,4 @@
+const username = document.getElementById('username')
 const name = document.getElementById('first_name')
 const lastname = document.getElementById('last_name')
 const password = document.getElementById('password1')
@@ -7,6 +8,10 @@ const errorElement = document.getElementById('error')
 
 form.addEventListener('submit', (e) => {
     let messages = []
+    if (username.value === '' || username.value == null) {
+        messages.push('Username is required')
+    }
+
     if (name.value === '' || name.value == null) {
         messages.push('First Name is required')
     }
@@ -28,3 +33,4 @@ form.addEventListener('submit', (e) => {
         errorElement.innerText = messages.join(' || ')
     }
 })
+

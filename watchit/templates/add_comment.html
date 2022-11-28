@@ -3,15 +3,20 @@
 {% block content %}
 
 <div class="container">
-    <h1>Add Comment</h1>
-    <br/><br/>
-    <div class="form-group">
-        <form method="POST">
-            {% csrf_token %}
-            <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
-            {{ form.as_p }}
-            <button>Add Comment</button>
-    </div>
+{% if user.is_authenticated %}
+        <h1>Add Comment</h1>
+        <br/><br/>
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                <!-- Cross Site Forgery Token / This is so that between acceptance and submission, data cannot be stolen -->
+                {{ form.as_p }}
+                <button>Add Comment</button>
+        </div>
+{% else %}
+<br/>
+<h2>Please <a href="{% url 'login' %}">Sign In</a> to add in comment</h2>
+{% endif %}
 </div>
 
 {% endblock %}
