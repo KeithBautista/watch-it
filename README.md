@@ -21,7 +21,7 @@
        <a href="#Credits"><strong>Credits</strong></a> 
     </li>
     <li>
-        <a href="#overall-thoughts"><strong>Overall Thoughts</strong></a>
+        <a href="#Acknowledgements"><strong>Acknowledgements</strong></a>
     </li>
 </ul>
 <hr>
@@ -105,26 +105,17 @@ The page created is structured in a way which is easy recognizable to other web 
 </ul>
 
 ## Wireframes
-<details>
+
 <summary>Home</summary>
-<img src="">
-</details>
-<details>
-<summary>Menu</summary>
-<img src="">
-</details>
-<details>
-<summary>Gallery</summary>
-<img src="">
-</details>
-<details>
-<summary>Contact Us</summary>
-<img src="">
-</details>
-<details>
-<summary>404</summary>
-<img src="">
-</details>
+<img src="readmeassets/wireframe_home.png">
+<summary>Movie Details</summary>
+<img src="readmeassets/wireframe_movie_details.png">
+<summary>Edit Movie Recommendation </summary>
+<img src="readmeassets/wireframe_movie_edit.png">
+<summary>Register</summary>
+<img src="readmeassets/wireframe_registration.png">
+
+
 
 ## Technologies Used During Creation
 
