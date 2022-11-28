@@ -54,15 +54,24 @@
 
 <!-- Set up your HTML -->
 
-<div class="owl-carousel">
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-  </div>
+<!--Owl Carousel https://owlcarousel2.github.io/OwlCarousel2/-->
+<div class="owl-carousel owl-theme">
+    {% for Post in object_list %}
+    <div class="item">
+      <div class="card h-100 card-home bg-transparent border-0">
+        <div class="card-body">
+          <a href="{% url 'movie-detail' Post.pk %}">
+            <img
+              class="card-img-top owl-book-listing"
+              src=" {{ Post.header_image.url }}"
+              alt="{{ Post.title }}"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
 
 <!-- Start of Post Cards-->
 <!---
