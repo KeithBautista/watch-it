@@ -15,16 +15,10 @@
         <a href="#Features"><strong>Features</strong></a>
     </li>
     <li>
-        <a href="#Testing"><strong>Testing</strong></a>   
-    </li>
-    <li>
         <a href="#Deployment"><strong>Deployment</strong></a>
     </li>
     <li>
        <a href="#Credits"><strong>Credits</strong></a> 
-    </li>
-    <li>
-        <a href="#Screenshots"><strong>Screenshots</strong></a>
     </li>
     <li>
         <a href="#overall-thoughts"><strong>Overall Thoughts</strong></a>
@@ -108,7 +102,7 @@ The page created is structured in a way which is easy recognizable to other web 
  To add to this there are various files such as login, changepassword, edit-profile-page and more which enables the user to make their account their own and personalize.
 </ul>
 
-### Technologies Used During Creation
+## Technologies Used During Creation
 
 - HTML
 - CSS
