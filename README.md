@@ -201,4 +201,4 @@ This project was deployed via Heroku by carrying out the following:
 All code used in this project was taken from the Code Institute lessons, as well as Django's documentation.
 
 # Acknowledgements
-This website, Watch It was designed and developed in conjunction with the Full Stack Developer Diploma course with specialty in ecommerce at Code Institute. I would like to thank Code Institute as well as the content creators in youtube for Django specifically for getting me through this!
+This website, Watch It was designed and developed in conjunction with the Full Stack Developer Diploma course with specialty in ecommerce at Code Institute. I would like to thank Code Institute as well as the content creators in youtube for Django specifically for getting me through this! More Specifically John Elder with his Django course on Blog Posts.
