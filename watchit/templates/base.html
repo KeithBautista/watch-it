@@ -33,7 +33,7 @@
             <!--Category Menu Code-->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle cool-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Categories
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -46,33 +46,33 @@
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'add-movie' %}">Add Movie</a>
+                <a class="nav-link cool-link" href="{% url 'add-movie' %}">Add Movie</a>
               </li>
               </ul>
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle cool-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{user.first_name}} {{user.last_name}}
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="nav-link" href="{% url 'edit_profile' %}">Edit Settings</a>
+                    <a class="nav-link cool-link" href="{% url 'edit_profile' %}">Edit Settings</a>
                     {% if user.profile.id %}
-                    <a class="nav-link" href="{% url 'edit-profile-page' user.profile.id %}">Edit Profile Page</a>
-                    <a class="nav-link" href="{% url 'profile-page' user.profile.id %}">Show Profile Page</a>
+                    <a class="nav-link cool-link" href="{% url 'edit-profile-page' user.profile.id %}">Edit Profile Page</a>
+                    <a class="nav-link cool-link" href="{% url 'profile-page' user.profile.id %}">Show Profile Page</a>
                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                     {% else %}
-                    <a class="nav-link" href="{% url 'create-profile-page' %}">Create Profile Page</a>
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    <a class="nav-link cool-link" href="{% url 'create-profile-page' %}">Create Profile Page</a>
+                    <a class="nav-link cool-link" href="{% url 'logout' %}">Logout</a>
                     {% endif %}
                   </div>
                 </li>
               </ul>
               {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'registration' %}">Register</a>
+                <a class="nav-link cool-link" href="{% url 'registration' %}">Register</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-link cool-link" href="{% url 'login' %}">Login</a>
               </li>
               {% endif %}
 

@@ -4,6 +4,7 @@
 
 <div class="container">
 {% if user.is_authenticated %}
+<br/><br/>
 <h1>Add Movie Recommendation</h1>
 <br/><br/>
 <div class="form-group">
@@ -22,6 +23,7 @@
 </script>
 
 {% else %}
+<br/><br/>
 <h1>You are not logged in</h1>
     <button class="nav-link" href="{% url 'registration' %}">Register</button>
     <button class="nav-link" href="{% url 'login' %}">Login</button>

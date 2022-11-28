@@ -11,3 +11,26 @@ body {
 #navBarStyle, #watchItInfo {
 	background-color: rgba(52, 165, 235, .6)!important;
 }
+
+/* Underline Link Animation */
+.cool-link {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #000;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+/* End of Underline Link Animation */

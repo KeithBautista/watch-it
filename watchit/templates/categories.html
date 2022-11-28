@@ -1,36 +1,46 @@
 {% extends 'base.html' %}
 
+<div class="owl-carousel owl-theme">
+    {% for Post in object_list %}
+    <div class="item">
+      <div class="card h-20 card-home bg-transparent border-0">
+        <div class="card-body">
+          <a href="{% url 'movie-detail' Post.pk %}">
+            <img
+              class="card-img-top owl-book-listing"
+              src=" {{ Post.header_image.url }}"
+              alt="{{ Post.title }}"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% block content %}
-<div class="container">
-    {% if user.is_authenticated %}
-        {% if category_posts %}
-            <h1>{{ Category.name }}</h1>
-            <ul>
-            {% for Post in category_posts %}
-                <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} - <a href="{% url 'edit-movie' Post.pk %}">Edit Movie</a> <br/>
-                {{ Post.snippet|slice:":200" }}</li>
-            {% endfor %}
-            </ul>
-        {% else %}
-
-            <h1>There are no posts here yet</h1>
-
-        {% endif %}
-    {% else %}
+        <div class="owl-carousel owl-theme">
             {% if category_posts %}
-            <h1>{{ Category.name }}</h1>
-            <ul>
-            {% for Post in category_posts %}
-                <li><a href="{% url 'movie-detail' Post.pk %}">{{ Post.title }}</a> - {{ Post.author }} <br/>
-                {{ Post.snippet|slice:":200" }}</li>
-            {% endfor %}
-            </ul>
-        {% else %}
+                {% for Post in category_posts %}
+                    <div class="item">
+                        <div class="card h-20 card-home bg-transparent border-0">
+                          <div class="card-body">
+                            <a href="{% url 'movie-detail' Post.pk %}">
+                              <img
+                                class="card-img-top owl-book-listing"
+                                src=" {{ Post.header_image.url }}"
+                                alt="{{ Post.title }}"
+                              />
+                            </a><br/>
+                            {{ Post.snippet|slice:":200" }}
+                          </div>
+                        </div>
+                    </div>
+        </div>
+                {% endfor %}
+            {% else %}
 
             <h1>There are no posts here yet</h1>
 
-        {% endif %}
-        {% endif %}
-</div>
+            {% endif %}
 {% endblock %}
