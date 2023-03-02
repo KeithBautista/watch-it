@@ -9,6 +9,9 @@
         <a href="#UX"><strong>UX</strong></a>               
     </li>
     <li>
+        <a href="#UX"><strong>Design</strong></a>               
+    </li>
+    <li>
         <a href="#Technologies"><strong>Technologies</strong></a>
     </li>
     <li>
@@ -36,6 +39,17 @@ This is my sumission for CodeInstitue's Project Portfolio Four.<br/>It uses vari
 A live of the website can be found <a href="https://kb-watchit.herokuapp.com/"><strong>HERE</strong></a><br>
 
 ## UX
+
+As many now rely on the internet to browse and access services, UX has become increasingly important than before.
+
+## Design
+
+#### Colours
+<img src="readmeassets/extras/colorPalette.png">
+
+The color scheme is kept simple by only having 3 colors. White (#FFFFFF), Black, (#000000) and Baby Blue (#34A5EB).<br>
+I've opted for a combination of black text set on the white background, with the cta buttons being highlighted and underlined black.<br>
+Along with this the baby blue is used to highlight the navbar, 3 main info points as well as the footer.
 
 As many now rely on the internet to browse and access services, UX has become increasingly important than before.
 
@@ -114,6 +128,7 @@ The page created is structured in a way which is easy recognizable to other web 
 <img src="readmeassets/wireframe_movie_edit.png">
 <summary>Register</summary>
 <img src="readmeassets/wireframe_registration.png">
+
 
 
 
