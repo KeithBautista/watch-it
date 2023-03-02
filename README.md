@@ -5,33 +5,48 @@
 ## Table of Contents
 1. [Introduction](#introduction)
     1. [Demo](#demo)
+
 2. [UX](#ux)
    1. [Colours](#colours)
    2. [Imagery](#imagery)
+
 3. [Wireframes](#wireframes)
+
 4. [Strategy](#strategy)
    1. [Aims](#aims)
    2. [Target Audience](#target-audience)
    3. [User Stories](#user-stories)
+
 5. [Agile Methodology](#agile-methodology)
+
 6. [Scope](#scope)
+
 7. [Structure of Pages](#structure-of-pages)
-8. [Feautures](#features)
+
+8. [Features](#features)
    1. [Implemented Features](#implemented-features)
+
 9. [Admin Panel and Superuser](#admin-panel-and-superuser)
+
 10. [Technologies](#technologies)
+
 11. [Frameworks and Tools and Programs Used](#frameworks-and-tools-and-programs-used)
+
 12. [Creating the Django app](#creating-the-django-app)
+
    1. [Features Left To Implement](#features-left-to-implement)
-13. [Deployment](#deployment)
+
+8. [Deployment](#deployment)
    1. [Project Deployment](#project-deployment)
+
 14. [Forking This Project](#forking-this-project)
+
 15. [Cloning This Project](#cloning-this-project)
-16. [Credits](#credits)
+
+8. [Credits](#deployment)
    1. [Content](#content)
    2. [Code and Other Resources](#code-and-other-resources)
    3. [Acknowledgements](#acknowledgements)
-
 ## Introduction
 
 Portfolio Project 4: Full Stack Frameworks - Code Institue - Deadline 28th January 2022
@@ -400,13 +415,13 @@ Clone this project by following the steps:
 
 ## Credits
 
-## Content
+### Content
 All Images and Appropriate descriptions were taken from <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a>
 <br>
 
 [Back to Table of Contents](#contents)
 
-## Code and Other Resources
+### Code and Other Resources
 All code used in this project was taken from the Code Institute lessons, as well as Django's documentation.
 [W3Schools - Python](https://www.w3schools.com/python/)
 [Stack Overflow](https://stackoverflow.com/)
@@ -414,7 +429,7 @@ All code used in this project was taken from the Code Institute lessons, as well
 
 [Back to Table of Contents](#contents)
 
-## Acknowledgements
+### Acknowledgements
 This website, Watch It was designed and developed in conjunction with the Full Stack Developer Diploma course with specialty in ecommerce at Code Institute. I would like to thank Code Institute as well as the content creators in youtube for Django specifically for getting me through this! More Specifically John Elder with his Django course on Blog Posts.
 
 <br>
