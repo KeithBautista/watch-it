@@ -94,10 +94,16 @@
                 </div>
               </li>
             </ul>
-            {% else %}
-            <a class="nav-link cool-link nav-item" href="{% url 'registration' %}">Register</a>
-            <a class="nav-link cool-link nav-item" href="{% url 'login' %}">Login</a>
-            {% endif %}
+              {% else %}
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link cool-link" href="{% url 'registration' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link cool-link" href="{% url 'login' %}">Login</a>
+                </li>
+              </ul>
+              {% endif %}
           </div>
         </div>
       </nav>
