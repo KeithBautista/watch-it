@@ -256,16 +256,10 @@ delete the following ones:
 
 <ul>
 
- <li>Categories for the Movies as they are currently bunched up in the home.html file</li>
-  <li>Allow users to add favorites rather than browsing through the movies posts</li>
+   <li>Categories for the Movies as they are currently bunched up in the home.html file</li>
+   <li>Allow users to add favorites rather than browsing through the movies posts</li>
   
 </ul>
-
-## Performance
-
-Below is the report generated from lighthouse via Chrome DevTools for the Desktop website. Whilst this could be better, precautions I have taken have been to convert images to WEBP to enable a fast load time. Though I don't doubt there there are further changes that need to be made to maximize this.<br>
-
-<img src="readmeassets/lightHousePerformance.png">
 
 ## Deployment
 A live demo of the website can be found <a href="https://kb-watchit.herokuapp.com/" target="_blank">**HERE**</a><br>
