@@ -140,10 +140,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
-cloudinary.config(
-  cloud_name="dq4hocok1",
-  api_key="488815912884356",
-  api_secret="p2ITrJswuVNFfGOcuVwJdMvzuPQ",
+cloudinary.config( 
+  cloud_name = "dq4hocok1", 
+  api_key = "488815912884356", 
+  api_secret = "p2ITrJswuVNFfGOcuVwJdMvzuPQ",
 )
 
 # Default primary key field type

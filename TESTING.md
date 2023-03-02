@@ -43,3 +43,22 @@ Below is the report generated from lighthouse via Chrome DevTools for the Deskto
 
 ## Backend/Admin Panel
 * I have repeatedly tested the Admin Panel since the start of the project's development. All the models are working without issues. I have successfully created, deleted, and updated data in all models without any errors. The models have the expected behavior for which they were built.
+
+## Manual Testing
+### Frontend
+* The Signup, Login, and Logout system is working correctly and has no issues. It displays the appropriate interactive message to the users.
+
+* The Profile Page is functioning properly. It updates the user's information and uploads/updates the user profile image. Once the update is complete, it shows the interactive message to the user.
+
+* The user profile image in the navbar and Post Details page is working without issues and displays the user's image when it is uploaded on the Profile Page.
+
+* All internal links are functioning correctly and direct the user to the correct page on the website.
+
+* All external links are working correctly and direct the user to the correct social media page by opening a new browser tab.
+
+* The comment form is without issues and submits a new comment once the form is completed by any user.
+
+* On the Movie Page, the CRUD functionality is working without issues. Logged-in users can create a new post such as update or delete their own Movie Posts. Also, any post can be updated or deleted on this page by the Superuser.
+
+### Backend/Admin Panel
+* I have repeatedly tested the Admin Panel since the start of the project's development. All the models are working without issues. I have successfully created, deleted, and updated data in all models without any errors. The models have the expected behavior for which they were built.
