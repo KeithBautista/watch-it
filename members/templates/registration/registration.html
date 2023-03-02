@@ -7,12 +7,14 @@
         <h2>You are already logged in! Press <a href="{% url 'home' %}">here</a> to go back home</h2>
 
     {% else %}
+<div class="container">
+
     <br/><br/>
 
     <h1>Register</h1>
 
     <br/><br/>
-<div class="container">
+
     <div id="error">
         <form id="form" method="POST">
             {% csrf_token %}
