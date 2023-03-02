@@ -45,13 +45,28 @@ As many now rely on the internet to browse and access services, UX has become in
 ## Design
 
 #### Colours
+As many now rely on the internet to browse and access services, UX has become increasingly important than before.
+
 <img src="readmeassets/extras/colorPalette.png">
 
 The color scheme is kept simple by only having 3 colors. White (#FFFFFF), Black, (#000000) and Baby Blue (#34A5EB).<br>
 I've opted for a combination of black text set on the white background, with the cta buttons being highlighted and underlined black.<br>
 Along with this the baby blue is used to highlight the navbar, 3 main info points as well as the footer.
 
-As many now rely on the internet to browse and access services, UX has become increasingly important than before.
+#### Imagery
+
+All imagery uploaded is related to movies, from the first image being a camera to the actual movie posters which have been uploaded by users.
+
+## Wireframes
+
+<summary>Home</summary>
+<img src="readmeassets/wireframe_home.png">
+<summary>Movie Details</summary>
+<img src="readmeassets/wireframe_movie_details.png">
+<summary>Edit Movie Recommendation </summary>
+<img src="readmeassets/wireframe_movie_edit.png">
+<summary>Register</summary>
+<img src="readmeassets/wireframe_registration.png">
 
 ## Strategy
 
@@ -118,43 +133,6 @@ The page created is structured in a way which is easy recognizable to other web 
  To add to this there are various files such as login, changepassword, edit-profile-page and more which enables the user to make their account their own and personalize.
 </ul>
 
-## Wireframes
-
-<summary>Home</summary>
-<img src="readmeassets/wireframe_home.png">
-<summary>Movie Details</summary>
-<img src="readmeassets/wireframe_movie_details.png">
-<summary>Edit Movie Recommendation </summary>
-<img src="readmeassets/wireframe_movie_edit.png">
-<summary>Register</summary>
-<img src="readmeassets/wireframe_registration.png">
-
-
-
-
-## Technologies
-
-- HTML
-- CSS
-- Django
-- JavaScript
-- Jquery (Owl Carousel)
-
-## Frameworks & Tools
-- Bootstrap v5.2
-- Git
-- Github
-- Balsamiq
-- Font Awesome
-- Favicon.io
-- Unsplash
-- Pexels
-- imagecompressor (Compressing Images)
-- cloudconvert (Converting Images into WebP Format)
-- Am I Responsive
-- Google Lens
-- Owl Carousel
-
 ## Features
 ### Implemented Features
 <ul>
@@ -173,6 +151,62 @@ The page created is structured in a way which is easy recognizable to other web 
  <li>Comment, Like and Profile Page: Allows users to like, comment and view the profile page of the user that created the movie post</li>
  <img src="readmeassets/commentLikeAndProfilePage.png">
 </ul>
+
+## Admin Panel/Superuser
+On the Admin Panel, as an admin/superuser I have full access to CRUD functionality so I can view, create, edit and
+delete the following ones:
+
+<ol>
+    <li>Users</li>
+    <li>Categorys</li>
+    <li>Comments</li>
+    <li>Posts</li>
+    <li>Profiles</li>
+</ol>
+
+## Technologies
+
+- [HTML 5](https://en.wikipedia.org/wiki/HTML/)
+- [CSS 3](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://www.javascript.com/)
+- [Django](https://www.python.org/)
+- [Python](https://www.djangoproject.com/)
+
+
+## Frameworks & Tools & Programs Used
+- [Bootstrap](https://getbootstrap.com/)<br>
+   Was used to style the website, add responsiveness and interactivity
+- [Jquery](https://jquery.com/)<br>
+   All the scripts were written using jquery library
+- [Git](https://git-scm.com/)<br>
+   Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
+- [GitHub](https://github.com/)<br>
+   GitHub is used to store the project's code after being pushed from Git
+- [Heroku](https://id.heroku.com)<br>
+   Heroku was used to deploy the live project
+- [PostgreSQL](https://www.elephantsql.com/)<br>
+   Database used through heroku.
+- [VSCode](https://code.visualstudio.com/)<br>
+   VSCode was used to create and edit the website
+- [Lucidchart](https://lucid.app/)<br>
+   Lucidchart was used to create the database diagram
+- [PEP8](http://pep8online.com/)<br>
+   PEP8 was used to validate all the Python code
+- [W3C - HTML](https://validator.w3.org/)<br>
+   W3C- HTML was used to validate all the HTML code
+- [W3C - CSS](https://jigsaw.w3.org/css-validator/)<br>
+   W3C - CSS was used to validate the CSS code
+- [Fontawesome](https://fontawesome.com/)<br>
+   To add icons to the website
+- [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)<br>
+   To check App responsiveness and debugging
+- [Cloud Convert](https://cloudconvert.com/jpg-to-webp)<br>
+   To change formatting of images to WEBP
+- [Balsamiq](https://balsamiq.com/)<br>
+   To build the wireframes for the project
+- [Adobe Color Wheel](https://color.adobe.com/create/color-wheel)<br>
+   To build the colour palette of the project
+
 
 ### Features left to implement
 <ul>
