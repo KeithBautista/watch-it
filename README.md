@@ -264,14 +264,33 @@ This project was deployed via Heroku by carrying out the following:
 ## Forking This Project
 Fork this project by following the steps:
 <ol>
-    <li>1. Open GitHub<a href="https://github.com/KeithBautista/watch-it" target="_blank"></li>
-    <li>2. Find the 'Fork' button at the top right of the page</li>
+    <li>Open <a href="https://github.com/KeithBautista/watch-it" target="_blank">GitHub</a></li>
+    <li>Find the 'Fork' button at the top right of the page</li>
     <li>Once you click the button the fork will be in your repository</li>
 </ol>
 
+## Forking This Project
+Clone this project by following the steps:
+<ol>
+    <li>Open <a href="https://github.com/KeithBautista/watch-it" target="_blank">GitHub</a></li>
+    <li>You will be provided with three options to choose from, HTTPS, SSH or GitHub CLI, click the clipboard icon in order to copy the URL.</li>
+    <li>Once you click the button, the fork will be in your repository.</li>
+    <li>Open a new terminal.</li>
+    <li>Change the current working directory to the location that you want the cloned directory.</li>
+    <li>Type "git clone" and paste the URL copied in step 1.</li>
+    <li>Press "Enter" and the project will be cloned.</li>
+</ol>
+
+
 ## Credits
-### Code
+
+### Content
+All Images and Appropriate descriptions were taken from <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a>
+
+### Code / Other Resources
 All code used in this project was taken from the Code Institute lessons, as well as Django's documentation.
+[W3Schools - Python](https://www.w3schools.com/python/)
+[Stack Overflow](https://stackoverflow.com/)
 
 # Acknowledgements
 This website, Watch It was designed and developed in conjunction with the Full Stack Developer Diploma course with specialty in ecommerce at Code Institute. I would like to thank Code Institute as well as the content creators in youtube for Django specifically for getting me through this! More Specifically John Elder with his Django course on Blog Posts.
