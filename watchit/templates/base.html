@@ -76,35 +76,28 @@
                 <a class="nav-link cool-link" href="{% url 'add-movie' %}">Add Movie</a>
               </li>
             </ul>
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle cool-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{user.first_name}} {{user.last_name}}
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="nav-link cool-link" href="{% url 'edit_profile' %}">Edit Settings</a>
-                    {% if user.profile.id %}
-                    <a class="nav-link cool-link" href="{% url 'edit-profile-page' user.profile.id %}">Edit Profile Page</a>
-                    <a class="nav-link cool-link" href="{% url 'profile-page' user.profile.id %}">Show Profile Page</a>
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                    {% else %}
-                    <a class="nav-link cool-link" href="{% url 'create-profile-page' %}">Create Profile Page</a>
-                    <a class="nav-link cool-link" href="{% url 'logout' %}">Logout</a>
-                    {% endif %}
-                  </div>
-                </li>
-              </ul>
-              {% else %}
-              <a class="nav-link cool-link nav-item" href="{% url 'registration' %}">Register</a>
-              <a class="nav-link cool-link nav-item" href="{% url 'login' %}">Login</a>
-              {% endif %}
-              
-            <!--
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle cool-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{user.first_name}} {{user.last_name}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="nav-link cool-link" href="{% url 'edit_profile' %}">Edit Settings</a>
+                  {% if user.profile.id %}
+                  <a class="nav-link cool-link" href="{% url 'edit-profile-page' user.profile.id %}">Edit Profile Page</a>
+                  <a class="nav-link cool-link" href="{% url 'profile-page' user.profile.id %}">Show Profile Page</a>
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                  {% else %}
+                  <a class="nav-link cool-link" href="{% url 'create-profile-page' %}">Create Profile Page</a>
+                  <a class="nav-link cool-link" href="{% url 'logout' %}">Logout</a>
+                  {% endif %}
+                </div>
+              </li>
+            </ul>
+            {% else %}
+            <a class="nav-link cool-link nav-item" href="{% url 'registration' %}">Register</a>
+            <a class="nav-link cool-link nav-item" href="{% url 'login' %}">Login</a>
+            {% endif %}
           </div>
         </div>
       </nav>
