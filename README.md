@@ -59,14 +59,18 @@ All imagery uploaded is related to movies, from the first image being a camera t
 
 ## Wireframes
 
-<summary>Home</summary>
+<h2>Home</h2>
 <img src="readmeassets/wireframe_home.png">
-<summary>Movie Details</summary>
+<h2>Movie Details</h2>
 <img src="readmeassets/wireframe_movie_details.png">
-<summary>Edit Movie Recommendation </summary>
+<h2>Edit Movie Recommendation</h2>
 <img src="readmeassets/wireframe_movie_edit.png">
-<summary>Register</summary>
+<h2>Register</h2>
 <img src="readmeassets/wireframe_registration.png">
+
+## Database Diagram
+<summary>Database Diagram</summary>
+<img src="readmeassets/extras/databaseDiagram.png">
 
 ## Strategy
 
@@ -90,35 +94,39 @@ All imagery uploaded is related to movies, from the first image being a camera t
 
 ### User Stories
 <ol>
- <li>As a user I can view the movies recently added whilst not needing to log in</li>
- <li>As a user I can view each movie more in depth by clicking on it as I may want to read the synopsis prior to committing to watch the movie</li>
- <li>As a user I can create a profile to be able to post movies I personally like for others to enjoy</li>
- <li>As a user I can create a profile page and include my social media links</li>
- <li>As a user I can comment on a post in order to tell other users if I like a movie or not</li>
- <li>As a user I can like a movie in order to let other users know that a particular movie was liked</li>
- <li>As a user I can delete my own posts in case I change my mind about a specific movie</li>
- <li>As a user I can edit my own posts in case I change my mind about a specific movie or perhaps have left out detail or want to upload a new movie poster</li>
- <li>As a user I can create an account</li>
- <li>As a user I can edit the settings on my account in case I need a password reset</li>
+    <li>As a user I can view the movies recently added whilst not needing to log in</li>
+    <li>As a user I can view each movie more in depth by clicking on it as I may want to read the synopsis prior to committing to watch the movie</li>
+    <li>As a user I can create a profile to be able to post movies I personally like for others to enjoy</li>
+    <li>As a user I can create a profile page and include my social media links</li>
+    <li>As a user I can comment on a post in order to tell other users if I like a movie or not</li>
+    <li>As a user I can like a movie in order to let other users know that a particular movie was liked</li>
+    <li>As a user I can delete my own posts in case I change my mind about a specific movie</li>
+    <li>As a user I can edit my own posts in case I change my mind about a specific movie or perhaps have left out detail or want to upload a new movie poster</li>
+    <li>As a user I can create an account</li>
+    <li>As a user I can edit the settings on my account in case I need a password reset</li>
  </ol>
+
+ ### Agile Methodology
+ All functionality and development of this project were managed using GitHub which Projects can be found
+[here](https://github.com/KeithBautista/watch-it/issues)
 
  ### Scope
  It is sometimes more beneficial to develop a website based on the MMP (Minimum Marketable Product). Although unfortuantely as this project requires more advanced concepts aswell as possible time constrains, it may be the case that a MVP (Minimum Viable Product) be created instead. This will allow the basic functions of the website to be implemented whereby time can be more spent on the basics rather than features that our users may potentially never look at.
 
  Whilst using the MVP
  <ul>
- <li>We will create a clear and consise website that will have all the necessary features needed for such a site.</li>
- <li>We will create a site with minimum levels of UX whilst still being intuitive enough for our users.</li>
- <li>We will meet the requirements of our beloved users</li>
+    <li>We will create a clear and consise website that will have all the necessary features needed for such a site.</li>
+    <li>We will create a site with minimum levels of UX whilst still being intuitive enough for our users.</li>
+    <li>We will meet the requirements of our beloved users</li>
  </ul>
 
  Whilst following the MVP model, to meet the user and business goals, our website will include:
  <ul>
- <li>A nav-bar that underlines the specific text currently on in order to enable users to identify where they are to be</li>
- <li>Links to the associated social media pages of the organization</li>
- <li>A registration form in order for users to sign up to the site.</li>
- <li>An add movie form in order for the users to provide their movie recommendations</li>
- <li>An edit movie form in case the user would like to edit anything in particular on the movie posted</li>
+    <li>A nav-bar that underlines the specific text currently on in order to enable users to identify where they are to be</li>
+    <li>Links to the associated social media pages of the organization</li>
+    <li>A registration form in order for users to sign up to the site.</li>
+    <li>An add movie form in order for the users to provide their movie recommendations</li>
+    <li>An edit movie form in case the user would like to edit anything in particular on the movie posted</li>
  </ul>
 
 ### Structure of Pages
@@ -126,11 +134,11 @@ All imagery uploaded is related to movies, from the first image being a camera t
 The page created is structured in a way which is easy recognizable to other web pages in the way it has a navigation bar on the top of the page and a footer at the bottom of the home.html. The navaigation bar is duplicated in each page so that it is easy to navigate to other pages from the main home page. On this, the site it divided up into multiple pages which each own having a function.
 
 <ul>
- <li>Home: This is the main page where you will find the most recent posts that have been made/posted by other users. Here you will also find the nav bar and footer as well as the frequently asked questions.</li>
- <li>Registration: This is where users will find themselves creating an account to be able to post movie recommendations</li>
- <li>Add Movie: This, once user is logged in allows them to create movie recommendations with the ability to edit the synopsis as well as the image that will be see in the home page.</li>
- <li>Edit Movie: This, once user is logged in and is the correct user that has created the movie post, will be able to delete, edit the content as well as change the image shown in the home.html file</li>
- To add to this there are various files such as login, changepassword, edit-profile-page and more which enables the user to make their account their own and personalize.
+    <li>Home: This is the main page where you will find the most recent posts that have been made/posted by other users. Here you will also find the nav bar and footer as well as the frequently asked questions.</li>
+    <li>Registration: This is where users will find themselves creating an account to be able to post movie recommendations</li>
+    <li>Add Movie: This, once user is logged in allows them to create movie recommendations with the ability to edit the synopsis as well as the image that will be see in the home page.</li>
+    <li>Edit Movie: This, once user is logged in and is the correct user that has created the movie post, will be able to delete, edit the content as well as change the image shown in the home.html file</li>
+    To add to this there are various files such as login, changepassword, edit-profile-page and more which enables the user to make their account their own and personalize.
 </ul>
 
 ## Features
@@ -167,47 +175,67 @@ delete the following ones:
 ## Technologies
 
 - [HTML 5](https://en.wikipedia.org/wiki/HTML/)
+
 - [CSS 3](https://en.wikipedia.org/wiki/CSS)
+
 - [JavaScript](https://www.javascript.com/)
+
 - [Django](https://www.python.org/)
+
 - [Python](https://www.djangoproject.com/)
 
 
 ## Frameworks & Tools & Programs Used
 - [Bootstrap](https://getbootstrap.com/)<br>
    Was used to style the website, add responsiveness and interactivity
+
 - [Jquery](https://jquery.com/)<br>
    All the scripts were written using jquery library
+
 - [Git](https://git-scm.com/)<br>
    Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
+
 - [GitHub](https://github.com/)<br>
    GitHub is used to store the project's code after being pushed from Git
+
 - [Heroku](https://id.heroku.com)<br>
    Heroku was used to deploy the live project
+
 - [PostgreSQL](https://www.elephantsql.com/)<br>
    Database used through heroku.
+
 - [VSCode](https://code.visualstudio.com/)<br>
    VSCode was used to create and edit the website
+
 - [Lucidchart](https://lucid.app/)<br>
    Lucidchart was used to create the database diagram
+
 - [PEP8](http://pep8online.com/)<br>
    PEP8 was used to validate all the Python code
+
 - [W3C - HTML](https://validator.w3.org/)<br>
    W3C- HTML was used to validate all the HTML code
+
 - [W3C - CSS](https://jigsaw.w3.org/css-validator/)<br>
    W3C - CSS was used to validate the CSS code
+
 - [Fontawesome](https://fontawesome.com/)<br>
    To add icons to the website
+
 - [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)<br>
    To check App responsiveness and debugging
+
 - [Cloud Convert](https://cloudconvert.com/jpg-to-webp)<br>
    To change formatting of images to WEBP
+
 - [Balsamiq](https://balsamiq.com/)<br>
    To build the wireframes for the project
+
 - [Adobe Color Wheel](https://color.adobe.com/create/color-wheel)<br>
    To build the colour palette of the project
 
 ## Creating the Django app
+
 <ol>
   <li>Go to the Code Institute Gitpod Full Template <a href="https://github.com/Code-Institute-Org/gitpod-full-template">Template</a>.</li>
   <li>Click on "Use This Template".</li>
@@ -225,17 +253,23 @@ delete the following ones:
 </ol>
 
 ### Features left to implement
+
 <ul>
+
  <li>Categories for the Movies as they are currently bunched up in the home.html file</li>
   <li>Allow users to add favorites rather than browsing through the movies posts</li>
+  
 </ul>
 
 ## Performance
+
 Below is the report generated from lighthouse via Chrome DevTools for the Desktop website. Whilst this could be better, precautions I have taken have been to convert images to WEBP to enable a fast load time. Though I don't doubt there there are further changes that need to be made to maximize this.<br>
+
 <img src="readmeassets/lightHousePerformance.png">
 
 ## Deployment
 A live demo of the website can be found <a href="https://kb-watchit.herokuapp.com/" target="_blank">**HERE**</a><br>
+
 <ol>
     <li>A new repository was created using 'Code-Instutute-Org/gitpod-full-template'</li>
     <li>A meaningful name was given to the new repository and 'Create Repository' was selected</li>
@@ -269,7 +303,7 @@ Fork this project by following the steps:
     <li>Once you click the button the fork will be in your repository</li>
 </ol>
 
-## Forking This Project
+## Cloning This Project
 Clone this project by following the steps:
 <ol>
     <li>Open <a href="https://github.com/KeithBautista/watch-it" target="_blank">GitHub</a></li>
@@ -280,7 +314,6 @@ Clone this project by following the steps:
     <li>Type "git clone" and paste the URL copied in step 1.</li>
     <li>Press "Enter" and the project will be cloned.</li>
 </ol>
-
 
 ## Credits
 
