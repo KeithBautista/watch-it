@@ -207,6 +207,22 @@ delete the following ones:
 - [Adobe Color Wheel](https://color.adobe.com/create/color-wheel)<br>
    To build the colour palette of the project
 
+## Creating the Django app
+<ol>
+  <li>Go to the Code Institute Gitpod Full Template <a href="https://github.com/Code-Institute-Org/gitpod-full-template">Template</a>.</li>
+  <li>Click on "Use This Template".</li>
+  <li>Once the template is available in your repository, click on "Gitpod".</li>
+  <li>When the image for the template and the Gitpod are ready, open a new terminal to start a new Django App.</li>
+  <li>Install Django and gunicorn: <code>pip3 install django gunicorn</code>.</li>
+  <li>Install supporting database libraries dj_database_url and psycopg2 library: <code>pip3 install dj_database_url psycopg2</code>.</li>
+  <li>Create file for requirements: in the terminal window, type <code>pip freeze --local &gt; requirements.txt</code>.</li>
+  <li>Create project: in the terminal window, type <code>django-admin startproject your_project_name</code>.</li>
+  <li>Create app: in the terminal window, type <code>python3 manage.py startapp your_app_name</code>.</li>
+  <li>Add app to the list of installed apps in settings.py file: <code>you_app_name</code>.</li>
+  <li>Migrate changes: in the terminal window, type <code>python3 manage.py migrate</code>.</li>
+  <li>Run the server to test if the app is installed, in the terminal window, type <code>python3 manage.py runserver</code>.</li>
+  <li>If the app has been installed correctly, the window will display "The install worked successfully! Congratulations!".</li>
+</ol>
 
 ### Features left to implement
 <ul>
@@ -215,7 +231,7 @@ delete the following ones:
 </ul>
 
 ## Performance
-Below is the report generated from lighthouse via Chrome DevTools for the Desktop website. Whilst this could be better, precautions I have taken have been to convert images to WEBP to enable a fast load time. Though I don't doubt there there are further changes that need to be made to maximize this.
+Below is the report generated from lighthouse via Chrome DevTools for the Desktop website. Whilst this could be better, precautions I have taken have been to convert images to WEBP to enable a fast load time. Though I don't doubt there there are further changes that need to be made to maximize this.<br>
 <img src="readmeassets/lightHousePerformance.png">
 
 ## Deployment
@@ -243,6 +259,14 @@ This project was deployed via Heroku by carrying out the following:
     <li>Link Heroku and GitHub accounts together</li>
     <li>Select the repo (via Heroku) that you want to make an app of and give it a name in Heroku.</li>
     <li>Click on deploy.</li>
+</ol>
+
+## Forking This Project
+Fork this project by following the steps:
+<ol>
+    <li>1. Open GitHub<a href="https://github.com/KeithBautista/watch-it" target="_blank"></li>
+    <li>2. Find the 'Fork' button at the top right of the page</li>
+    <li>Once you click the button the fork will be in your repository</li>
 </ol>
 
 ## Credits
